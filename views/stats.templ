@@ -3,7 +3,21 @@ package views
 import "github.com/maslovpi/odd-character-htmx/models"
 
 templ Stats(stats models.Stats) {
-	<p>STR: { stats.Strength }</p>
-	<p>DEX: { stats.Dexterity }</p>
-	<p>WIL: { stats.Willpower }</p>
+	if stats.Strength == stats.Max {
+		<p class="red">STR: { stats.Strength }</p>
+	} else {
+		<p>STR: { stats.Strength }</p>
+	}
+	if stats.Dexterity == stats.Max {
+		<p class="red">DEX: { stats.Dexterity }</p>
+	} else {
+		<p>DEX: { stats.Dexterity }</p>
+	}
+	if stats.Willpower == stats.Max {
+		<p class="red">WIL: { stats.Willpower }</p>
+	} else {
+		<p>WIL: { stats.Willpower }</p>
+	}
+	<br/>
+	<p>HP: { stats.HitProtection }</p>
 }

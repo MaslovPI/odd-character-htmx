@@ -5,30 +5,9 @@ import (
 	"net/http"
 
 	"github.com/a-h/templ"
-	"github.com/maslovpi/odd-character-htmx/functions"
 	"github.com/maslovpi/odd-character-htmx/models"
 	"github.com/maslovpi/odd-character-htmx/views"
 )
-
-func check(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
-func rollStat() int {
-	result, err := functions.RollMultipleDice(3, 6)
-	check(err)
-	return result
-}
-
-func rollStats() models.Stats {
-	return models.Stats{
-		Strength:  rollStat(),
-		Dexterity: rollStat(),
-		Willpower: rollStat(),
-	}
-}
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -36,7 +15,7 @@ func main() {
 	})
 
 	http.HandleFunc("/roll", func(w http.ResponseWriter, r *http.Request) {
-		stats := rollStats()
+		stats := models.RollStats()
 		templ.Handler(views.Stats(stats)).ServeHTTP(w, r)
 	})
 

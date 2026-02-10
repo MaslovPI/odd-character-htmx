@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func roll(dimensions int) (int, error) {
+func Roll(dimensions int) (int, error) {
 	if dimensions < 1 {
 		return 0, errors.New("Wrong dimensions")
 	}
@@ -22,7 +22,7 @@ func RollMultipleDice(amount int, dimensions int) (int, error) {
 
 	sum := 0
 	for range amount {
-		result, err := roll(dimensions)
+		result, err := Roll(dimensions)
 		if err != nil {
 			return 0, err
 		}
