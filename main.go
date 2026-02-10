@@ -39,6 +39,11 @@ func main() {
 		stats := rollStats()
 		templ.Handler(views.Stats(stats)).ServeHTTP(w, r)
 	})
+
+	http.Handle("/css/",
+		http.StripPrefix("/css/",
+			http.FileServer(http.Dir("css"))))
+
 	log.Println("http://localhost:42069 running...")
 	http.ListenAndServe(":42069", nil)
 }

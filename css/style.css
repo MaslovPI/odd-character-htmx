@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Roboto+Condensed:wght@400;700&display=swap");
+
+:root {
+	--steel-dark: #0e0f11;
+	--steel-mid: #1b1d21;
+	--parchment: #d7cbb2;
+	--blood-red: #9b1c1c;
+	--hot-red: #c92a2a;
+}
+
+body {
+	background: linear-gradient(180deg, var(--steel-dark), var(--steel-mid));
+	color: var(--parchment);
+	font-family: "Roboto Condensed", sans-serif;
+}
+
+.stats {
+	font-family: "Cinzel", serif;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.stats p {
+	margin: 0.3rem 0;
+	padding-left: 0.5rem;
+	border-left: 2px solid #333;
+	text-shadow: 1px 1px 0 #000;
+}
+
+.red {
+	color: var(--hot-red);
+	border-left-color: var(--blood-red);
+	text-shadow:
+		0 0 4px rgba(201, 42, 42, 0.6),
+		1px 1px 0 #000;
+	font-weight: 700;
+}
