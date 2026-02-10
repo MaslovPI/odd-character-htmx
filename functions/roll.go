@@ -17,7 +17,7 @@ func roll(dimensions int) (int, error) {
 
 func RollMultipleDice(amount int, dimensions int) (int, error) {
 	if amount < 1 {
-		return 0, errors.New("Wrong number")
+		return 0, errors.New("Wrong amount")
 	}
 
 	sum := 0
