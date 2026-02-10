@@ -1,0 +1,9 @@
+package views
+
+import "github.com/maslovpi/odd-character-htmx/models"
+
+templ Stats(stats models.Stats) {
+	<p>STR: { stats.Strength }</p>
+	<p>DEX: { stats.Dexterity }</p>
+	<p>WIL: { stats.Willpower }</p>
+}

@@ -1,0 +1,19 @@
+package views
+
+import "github.com/maslovpi/odd-character-htmx/models"
+
+templ MainContent(stats models.Stats) {
+	<div class="container">
+		<h1>Odd Character</h1>
+		<div id="stats">
+			@Stats(stats)
+		</div>
+		<button
+			hx-post="/roll"
+			hx-target="#stats"
+			hx-swap="innerHTML"
+		>
+			Roll Stats
+		</button>
+	</div>
+}
