@@ -39,7 +39,7 @@ func MainContent(stats models.Stats) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</div><button hx-post=\"/roll\" hx-target=\"#stats\" hx-swap=\"innerHTML\">Roll Stats</button></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</div><button hx-get=\"/roll\" hx-target=\"#stats\" hx-swap=\"innerHTML\">Roll Stats</button></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

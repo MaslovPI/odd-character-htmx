@@ -9,7 +9,7 @@ templ MainContent(stats models.Stats) {
 			@Stats(stats)
 		</div>
 		<button
-			hx-post="/roll"
+			hx-get="/roll"
 			hx-target="#stats"
 			hx-swap="innerHTML"
 		>
