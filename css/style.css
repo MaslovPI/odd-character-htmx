@@ -2,14 +2,13 @@
 
 :root {
 	--steel-dark: #0e0f11;
-	--steel-mid: #1b1d21;
 	--parchment: #d7cbb2;
 	--blood-red: #9b1c1c;
 	--hot-red: #c92a2a;
 }
 
 body {
-	background: linear-gradient(180deg, var(--steel-dark), var(--steel-mid));
+	background: var(--steel-dark);
 	color: var(--parchment);
 	font-family: "Roboto Condensed", sans-serif;
 }
