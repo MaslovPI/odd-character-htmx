@@ -10,18 +10,24 @@ import (
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
-	templ.Handler(views.Index(models.Stats{})).ServeHTTP(w, r)
+	templ.Handler(views.Index(models.GetEmptyChar())).ServeHTTP(w, r)
 }
 
-func roll(w http.ResponseWriter, r *http.Request) {
+func rollStats(w http.ResponseWriter, r *http.Request) {
 	stats := models.RollStats()
 	templ.Handler(views.Stats(stats)).ServeHTTP(w, r)
+}
+
+func generateDescription(w http.ResponseWriter, r *http.Request) {
+	starter := models.GenerateStarter()
+	templ.Handler(views.Description(starter)).ServeHTTP(w, r)
 }
 
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /{$}", home)
-	mux.HandleFunc("GET /roll", roll)
+	mux.HandleFunc("GET /rollstats", rollStats)
+	mux.HandleFunc("GET /generatedescription", generateDescription)
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))

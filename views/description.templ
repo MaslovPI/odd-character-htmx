@@ -1,0 +1,18 @@
+package views
+
+import "github.com/maslovpi/odd-character-htmx/models"
+
+templ Description(starter models.Starter) {
+	if len(starter.Content) != 0 {
+		<p>Starting equipment: { starter.Content }</p>
+	}
+	if len(starter.Arcana) != 0 {
+		<p>Arcana: { starter.Arcana }</p>
+	}
+	if len(starter.Pet) != 0 {
+		<p>Pet: { starter.Pet }</p>
+	}
+	if len(starter.Hire) != 0 {
+		<p>Hireling: { starter.Hire }</p>
+	}
+}
