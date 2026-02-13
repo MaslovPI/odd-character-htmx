@@ -8,10 +8,20 @@
 }
 
 body {
+  margin:2em auto;
+  max-width:800px;
+  padding:1em;
+  line-height:1.6;
+  -webkit-hyphens:auto;
+  -ms-hyphens:auto;
+  hyphens:auto;
+  font-size:18px;
 	background: var(--steel-dark);
 	color: var(--parchment);
 	font-family: "Roboto Condensed", sans-serif;
 }
+
+  h1,h2,h3{line-height:1.2}
 
 .stats {
 	font-family: "Cinzel", serif;
