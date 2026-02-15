@@ -1,5 +1,7 @@
 package models
 
+import "fmt"
+
 type Starter struct {
 	Content string
 	Arcana  string
@@ -7,9 +9,9 @@ type Starter struct {
 	Hire    string
 }
 
-func GenerateStarter() Starter {
+func GenerateStarter(max int, hp int) Starter {
 	starter := Starter{
-		Content: "Starting content",
+		Content: fmt.Sprintf("Starting content, hp: %d, max: %d", hp, max),
 		Arcana:  "Powerful Magic uuuu",
 		Pet:     "A doggo wuf-wuf",
 		Hire:    "Solder-man",

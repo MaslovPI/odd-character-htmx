@@ -19,9 +19,10 @@ templ MainContent(character models.Character) {
 			@Description(character.Starter)
 		</div>
 		<button
-			hx-get="/generatedescription"
+			hx-post="/generatedescription"
 			hx-target="#description"
 			hx-swap="innerHTML"
+			hx-vals='{"max_stat": @character.Stats.Max, "hp": @character.Stats.HitProtection}'
 		>
 			Generate Description
 		</button>

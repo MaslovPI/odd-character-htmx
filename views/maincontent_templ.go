@@ -47,7 +47,7 @@ func MainContent(character models.Character) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><button hx-get=\"/generatedescription\" hx-target=\"#description\" hx-swap=\"innerHTML\">Generate Description</button></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><button hx-post=\"/generatedescription\" hx-target=\"#description\" hx-swap=\"innerHTML\" hx-vals='{\"max_stat\": @character.Stats.Max, \"hp\": @character.Stats.HitProtection}'>Generate Description</button></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
