@@ -1,8 +1,9 @@
 package main
 
 import (
-	"log"
+	"log/slog"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/a-h/templ"
@@ -12,61 +13,54 @@ import (
 
 func middlewareLog(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		log.Printf("%s %s", r.Method, r.URL.Path)
+		slog.Info("request", "method", r.Method, "path", r.URL.Path)
 		next.ServeHTTP(w, r)
 	})
 }
 
-func home(w http.ResponseWriter, r *http.Request) {
+func home(w http.ResponseWriter, r *http.Request) error {
 	templ.Handler(views.Index(models.GetEmptyChar())).ServeHTTP(w, r)
+	return nil
 }
 
-func rollStats(w http.ResponseWriter, r *http.Request) {
-	stats := models.RollStats()
-	templ.Handler(views.Stats(stats)).ServeHTTP(w, r)
+func rollStats(w http.ResponseWriter, r *http.Request) error {
+	templ.Handler(views.Stats(models.RollStats())).ServeHTTP(w, r)
+	return nil
 }
 
-func generateDescription(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodPost {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
-		return
-	}
-
+func generateDescription(w http.ResponseWriter, r *http.Request) error {
 	if err := r.ParseForm(); err != nil {
-		http.Error(w, "Failed to parse form", http.StatusBadRequest)
-		return
+		return &appError{err, "failed to parse form", http.StatusBadRequest}
 	}
 
-	maxStatStr := r.FormValue("max_stat")
-	hpStr := r.FormValue("hp")
-
-	maxStat, err := strconv.Atoi(maxStatStr)
+	maxStat, err := strconv.Atoi(r.FormValue("max_stat"))
 	if err != nil {
-		http.Error(w, "Invalid max_stat", http.StatusBadRequest)
-		return
+		return &appError{err, "invalid max_stat", http.StatusBadRequest}
 	}
 
-	hp, err := strconv.Atoi(hpStr)
+	hp, err := strconv.Atoi(r.FormValue("hp"))
 	if err != nil {
-		http.Error(w, "Invalid hp", http.StatusBadRequest)
-		return
+		return &appError{err, "invalid hp", http.StatusBadRequest}
 	}
 
-	starter := models.GenerateStarter(maxStat, hp)
-
-	templ.Handler(views.Description(starter)).ServeHTTP(w, r)
+	templ.Handler(views.Description(models.GenerateStarter(maxStat, hp))).ServeHTTP(w, r)
+	return nil
 }
 
 func main() {
+	slog.SetDefault(slog.New(slog.NewTextHandler(os.Stdout, nil)))
+
 	mux := http.NewServeMux()
-	mux.HandleFunc("GET /{$}", home)
-	mux.HandleFunc("GET /rollstats", rollStats)
-	mux.HandleFunc("POST /generatedescription", generateDescription)
+	mux.Handle("GET /{$}", appHandler(home))
+	mux.Handle("GET /rollstats", appHandler(rollStats))
+	mux.Handle("POST /generatedescription", appHandler(generateDescription))
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))
 
-	log.Println("http://localhost:42069 running...")
-	err := http.ListenAndServe(":42069", middlewareLog(mux))
-	log.Fatal(err)
+	slog.Info("server starting", "addr", "http://localhost:42069")
+	if err := http.ListenAndServe(":42069", middlewareLog(mux)); err != nil {
+		slog.Error("server failed", "err", err)
+		os.Exit(1)
+	}
 }
