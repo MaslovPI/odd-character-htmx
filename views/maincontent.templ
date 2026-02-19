@@ -22,7 +22,7 @@ templ MainContent(character models.Character) {
 			hx-post="/generatedescription"
 			hx-target="#description"
 			hx-swap="innerHTML"
-			hx-vals='{"max_stat": @character.Stats.Max, "hp": @character.Stats.HitProtection}'
+			hx-include="#stats"
 		>
 			Generate Description
 		</button>

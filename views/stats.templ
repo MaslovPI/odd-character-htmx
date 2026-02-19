@@ -1,6 +1,9 @@
 package views
 
-import "github.com/maslovpi/odd-character-htmx/models"
+import (
+	"fmt"
+	"github.com/maslovpi/odd-character-htmx/models"
+)
 
 templ Stats(stats models.Stats) {
 	if stats.Strength == stats.Max {
@@ -20,4 +23,7 @@ templ Stats(stats models.Stats) {
 	}
 	<br/>
 	<p>HP: { stats.HitProtection }</p>
+	// Input for generating description
+	<input type="hidden" name="max_stat" value={ fmt.Sprintf("%d", stats.Max) }/>
+	<input type="hidden" name="hp" value={ fmt.Sprintf("%d", stats.HitProtection) }/>
 }
