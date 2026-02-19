@@ -70,7 +70,7 @@ func (e *Equipment) constructDescription(nameToUse string) string {
 		parts = append(parts, fmt.Sprintf("Description: %s", e.Description))
 	}
 
-	return fmt.Sprintf("%s (%s)", nameToUse, strings.Join(parts, " "))
+	return fmt.Sprintf("%s (%s)", nameToUse, strings.Join(parts, ", "))
 }
 
 func (e *EquipmentProvider) getByName(name string) (Equipment, bool) {

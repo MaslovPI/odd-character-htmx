@@ -4,10 +4,6 @@ import (
 	"testing"
 )
 
-func providerWithMap(m map[string]Equipment) EquipmentProvider {
-	return EquipmentProvider{equipmentMap: m}
-}
-
 func TestInitEquipmentProvider(t *testing.T) {
 	ep, err := InitEquipmentProvider()
 	if err != nil {
@@ -56,7 +52,7 @@ func TestGetEquipmentDescription(t *testing.T) {
 			name:             "found by exact name with cost and description",
 			inputName:        "Shield",
 			givenDescription: "",
-			want:             "Shield (Cost: 10g Description: Adds 1 armor.)",
+			want:             "Shield (Cost: 10g, Description: Adds 1 armor.)",
 		},
 		{
 			name:             "found by exact name with cost, no description",
@@ -68,7 +64,7 @@ func TestGetEquipmentDescription(t *testing.T) {
 			name:             "found by exact name with no cost, has description",
 			inputName:        "Mystery Box",
 			givenDescription: "",
-			want:             "Mystery Box (Cost: 0 Description: Contents unknown.)",
+			want:             "Mystery Box (Cost: 0, Description: Contents unknown.)",
 		},
 		{
 			name:             "found by exact name with no cost and no description",
@@ -80,7 +76,7 @@ func TestGetEquipmentDescription(t *testing.T) {
 			name:             "found by example name uses input name in output",
 			inputName:        "Wooden Shield",
 			givenDescription: "",
-			want:             "Wooden Shield (Cost: 10g Description: Adds 1 armor.)",
+			want:             "Wooden Shield (Cost: 10g, Description: Adds 1 armor.)",
 		},
 		{
 			name:             "not found with given description falls back to name plus description",
@@ -106,4 +102,8 @@ func TestGetEquipmentDescription(t *testing.T) {
 			}
 		})
 	}
+}
+
+func providerWithMap(m map[string]Equipment) EquipmentProvider {
+	return EquipmentProvider{equipmentMap: m}
 }
