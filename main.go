@@ -24,7 +24,11 @@ func home(w http.ResponseWriter, r *http.Request) error {
 }
 
 func rollStats(w http.ResponseWriter, r *http.Request) error {
-	templ.Handler(views.Stats(models.RollStats())).ServeHTTP(w, r)
+	stats, err := models.RollStats()
+	if err != nil {
+		return &appError{err, "failed to roll stats", http.StatusInternalServerError}
+	}
+	templ.Handler(views.Stats(stats)).ServeHTTP(w, r)
 	return nil
 }
 

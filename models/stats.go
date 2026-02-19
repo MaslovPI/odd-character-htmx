@@ -1,8 +1,6 @@
 package models
 
 import (
-	"log"
-
 	"github.com/maslovpi/odd-character-htmx/functions"
 )
 
@@ -18,31 +16,38 @@ func (s *Stats) populateMax() {
 	s.Max = max(s.Strength, s.Dexterity, s.Willpower)
 }
 
-func check(err error) {
+func rollStat() (int, error) {
+	return functions.RollMultipleDice(3, 6)
+}
+
+func rollHP() (int, error) {
+	return functions.Roll(6)
+}
+
+func RollStats() (Stats, error) {
+	str, err := rollStat()
 	if err != nil {
-		log.Fatal(err)
+		return Stats{}, err
 	}
-}
+	dex, err := rollStat()
+	if err != nil {
+		return Stats{}, err
+	}
+	wil, err := rollStat()
+	if err != nil {
+		return Stats{}, err
+	}
+	hp, err := rollHP()
+	if err != nil {
+		return Stats{}, err
+	}
 
-func rollStat() int {
-	result, err := functions.RollMultipleDice(3, 6)
-	check(err)
-	return result
-}
-
-func rollHP() int {
-	result, err := functions.Roll(6)
-	check(err)
-	return result
-}
-
-func RollStats() Stats {
 	stats := Stats{
-		Strength:      rollStat(),
-		Dexterity:     rollStat(),
-		Willpower:     rollStat(),
-		HitProtection: rollHP(),
+		Strength:      str,
+		Dexterity:     dex,
+		Willpower:     wil,
+		HitProtection: hp,
 	}
 	stats.populateMax()
-	return stats
+	return stats, nil
 }
