@@ -1,0 +1,176 @@
+[
+  {
+    "name": "Crude Weapon",
+    "cost": "1s",
+    "description": "d6 Damage, Bulky.",
+    "examples": ["Bow", "Pitchfork", "Barstool"]
+  },
+  {
+    "name": "Hand Weapon",
+    "cost": "2s",
+    "description": "d6 Damage.",
+    "examples": ["Dagger", "Sword", "Pistol", "Club"]
+  },
+  {
+    "name": "Field Weapon",
+    "cost": "10s",
+    "description": "d8 Damage, Bulky.",
+    "examples": [
+      "Musket",
+      "Brace of Pistols",
+      "Sword and Dagger",
+      "Halberd",
+      "Rifle"
+    ]
+  },
+  {
+    "name": "Noble Weapon",
+    "cost": "30s",
+    "description": "d8 Damage.",
+    "examples": ["Finely Made Saber", "Duelling Pistol", "Rapier"]
+  },
+  {
+    "name": "Heavy Gun",
+    "cost": "1g",
+    "description": "d10 Damage, Bulky. Cannot move and fire.",
+    "examples": ["Elephant Gun", "Long Rifle"]
+  },
+  {
+    "name": "Modern Armour",
+    "cost": "50s",
+    "description": "Armour 1.",
+    "examples": ["Breastplate", "Helm"]
+  },
+  {
+    "name": "Crude Armour",
+    "cost": "25s",
+    "description": "Armour 1, Bulky.",
+    "examples": ["Outdated Armour", "Ceremonial Armour"]
+  },
+  {
+    "name": "Shield",
+    "cost": "10s",
+    "description": "+1 Armour, Bulky."
+  },
+  {
+    "name": "Flashbang",
+    "cost": "10s",
+    "description": "Momentarily blinds anyone that fails a DEX save."
+  },
+  {
+    "name": "Fire Oil",
+    "cost": "10s",
+    "description": "Sets an area alight. All inside take d6 Damage each round."
+  },
+  {
+    "name": "Bomb",
+    "cost": "20s",
+    "description": "d10 Blast."
+  },
+  {
+    "name": "Rocket",
+    "cost": "20s",
+    "description": "d10 Damage and a colourful explosion."
+  },
+  {
+    "name": "Smoke Bomb",
+    "cost": "10s",
+    "description": "Fills a room with smoke when lit. Attacks through the smoke are Impaired."
+  },
+  {
+    "name": "Poison",
+    "cost": "20s",
+    "description": "Lose d20 STR if consumed."
+  },
+  {
+    "name": "Ether",
+    "cost": "10s",
+    "description": "Inhaled. STR save or pass out for one hour."
+  },
+  {
+    "name": "Acid",
+    "cost": "10s",
+    "description": "d6 Damage. Burns through most materials."
+  },
+  {
+    "name": "Antitoxin",
+    "cost": "10s",
+    "description": "Neutralises most toxins."
+  },
+  {
+    "name": "Tools",
+    "cost": "1s each",
+    "examples": [
+      "Crowbar",
+      "Saw",
+      "Glue",
+      "Magnifying Glass",
+      "Manacles",
+      "Animal Trap",
+      "Lockpicks",
+      "Mirror",
+      "Writing Set",
+      "Fishing Pole",
+      "Shovel",
+      "Grappling Hook",
+      "Collapsible Pole",
+      "20ft Rope",
+      "Spikes"
+    ]
+  },
+  {
+    "name": "Luxuries",
+    "cost": "1g",
+    "examples": [
+      "Clockwork Items",
+      "Thermometer",
+      "Elaborate Clothes",
+      "Jewellery",
+      "Ornaments",
+      "Spyglass"
+    ]
+  },
+  {
+    "name": "Board (Dormitory)",
+    "cost": "1s per week",
+    "description": "Bed in a dormitory."
+  },
+  {
+    "name": "Board (Boarding House)",
+    "cost": "10s per week",
+    "description": "Room in a boarding house."
+  },
+  {
+    "name": "Board (Town House)",
+    "cost": "20s per week",
+    "description": "Town house lodging."
+  },
+  {
+    "name": "Food: Bread and Broth",
+    "cost": "10p"
+  },
+  {
+    "name": "Drink: Bottle of Gin or Rum",
+    "cost": "50p"
+  },
+  {
+    "name": "Meal: Pie and Wine",
+    "cost": "50p"
+  },
+  {
+    "name": "Meal: Fine Meal",
+    "cost": "1s"
+  },
+  {
+    "name": "Mule",
+    "cost": "5s"
+  },
+  {
+    "name": "Llama",
+    "cost": "5s"
+  },
+  {
+    "name": "Horse",
+    "cost": "1g"
+  }
+]
