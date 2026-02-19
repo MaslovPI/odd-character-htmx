@@ -1,0 +1,595 @@
+[
+  {
+    "hp": 1,
+    "starters": [
+      {
+        "max": 9,
+        "arcana": 0,
+        "content": [
+          { "name": "Sword", "extra_info": "d6" },
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Modern Armour", "extra_info": null },
+          { "name": "Sense nearby unearthly beings", "extra_info": null }
+        ]
+      },
+      {
+        "max": 10,
+        "arcana": 1,
+        "content": [
+          { "name": "Rifle", "extra_info": "d8 B" },
+          { "name": "Bayonet", "extra_info": "d6" }
+        ],
+        "hire": "Lighter Boy"
+      },
+      {
+        "max": 11,
+        "arcana": 1,
+        "content": [
+          { "name": "Rifle", "extra_info": "d8 B" },
+          { "name": "Modern Armour", "extra_info": null }
+        ],
+        "pet": "Hound"
+      },
+      {
+        "max": 12,
+        "arcana": 1,
+        "content": [
+          { "name": "Club", "extra_info": "d6" },
+          { "name": "Throwing Knives", "extra_info": null }
+        ]
+      },
+      {
+        "max": 13,
+        "arcana": 1,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Ether", "extra_info": null },
+          { "name": "Poison", "extra_info": null }
+        ]
+      },
+      {
+        "max": 14,
+        "arcana": 1,
+        "content": [
+          { "name": "Cane", "extra_info": "d6" },
+          { "name": "Acid", "extra_info": null },
+          { "name": "Spyglass", "extra_info": null }
+        ]
+      },
+      {
+        "max": 15,
+        "arcana": 0,
+        "content": [
+          { "name": "Brace of Pistols", "extra_info": "d8 B" },
+          { "name": "Canary", "extra_info": null },
+          { "name": "Ether", "extra_info": null }
+        ]
+      },
+      {
+        "max": 16,
+        "arcana": 0,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Pocket-watch", "extra_info": null },
+          { "name": "Bomb", "extra_info": null }
+        ]
+      },
+      {
+        "max": 17,
+        "arcana": 0,
+        "content": [
+          { "name": "Halberd", "extra_info": "d8 B" },
+          { "name": "Fake Pistol", "extra_info": null },
+          { "name": "Artificial Lung", "extra_info": null }
+        ]
+      },
+      {
+        "max": 18,
+        "arcana": 0,
+        "content": [
+          { "name": "Garotte", "extra_info": "d6" },
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Mute", "extra_info": null }
+        ]
+      }
+    ]
+  },
+  {
+    "hp": 2,
+    "starters": [
+      {
+        "max": 9,
+        "arcana": 0,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Sword", "extra_info": "d6" },
+          { "name": "Flashbang", "extra_info": null },
+          { "name": "Sense nearby Arcana", "extra_info": null }
+        ]
+      },
+      {
+        "max": 10,
+        "arcana": 1,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Hatchet", "extra_info": "d6" }
+        ],
+        "pet": "Hawk"
+      },
+      {
+        "max": 11,
+        "arcana": 1,
+        "content": [
+          { "name": "Hatchet", "extra_info": "d6" },
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Bolt-Cutters", "extra_info": null }
+        ]
+      },
+      {
+        "max": 12,
+        "arcana": 1,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Mule", "extra_info": null }
+        ]
+      },
+      {
+        "max": 13,
+        "arcana": 0,
+        "content": [
+          { "name": "Sword", "extra_info": "d6" },
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Crude Armour", "extra_info": null }
+        ]
+      },
+      {
+        "max": 14,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Bell", "extra_info": null },
+          { "name": "Steel Wire", "extra_info": null },
+          { "name": "Smoke-bomb", "extra_info": null }
+        ]
+      },
+      {
+        "max": 15,
+        "arcana": 0,
+        "content": [
+          { "name": "Longaxe", "extra_info": "d8 B" },
+          { "name": "Fire Oil", "extra_info": null }
+        ],
+        "pet": "Ferret"
+      },
+      {
+        "max": 16,
+        "arcana": 0,
+        "content": [
+          { "name": "Staff", "extra_info": "d6 B" },
+          { "name": "Tongs", "extra_info": null },
+          { "name": "Glue", "extra_info": null }
+        ]
+      },
+      {
+        "max": 17,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Net", "extra_info": null },
+          { "name": "Trumpet", "extra_info": null },
+          { "name": "Prosthetic Leg", "extra_info": null }
+        ]
+      },
+      {
+        "max": 18,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Grease", "extra_info": null },
+          { "name": "Hacksaw", "extra_info": null },
+          { "name": "One Arm", "extra_info": null }
+        ]
+      }
+    ]
+  },
+  {
+    "hp": 3,
+    "starters": [
+      {
+        "max": 9,
+        "arcana": 0,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Club", "extra_info": "d6" },
+          { "name": "Immunity to extreme heat and cold", "extra_info": null }
+        ]
+      },
+      {
+        "max": 10,
+        "arcana": 1,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Protective Gloves", "extra_info": null }
+        ]
+      },
+      {
+        "max": 11,
+        "arcana": 1,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Mallet", "extra_info": null },
+          { "name": "Marbles", "extra_info": null },
+          { "name": "Fancy Hat", "extra_info": null }
+        ]
+      },
+      {
+        "max": 12,
+        "arcana": 1,
+        "content": [
+          { "name": "Pick-Axe", "extra_info": "d6" },
+          { "name": "Manacles", "extra_info": null }
+        ]
+      },
+      {
+        "max": 13,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Smoke-bomb", "extra_info": null },
+          { "name": "Shovel", "extra_info": null }
+        ],
+        "pet": "Mutt"
+      },
+      {
+        "max": 14,
+        "arcana": 0,
+        "content": [
+          { "name": "Longaxe", "extra_info": "d8 B" },
+          { "name": "Throwing Axes", "extra_info": null },
+          { "name": "Fire Oil", "extra_info": null }
+        ]
+      },
+      {
+        "max": 15,
+        "arcana": 0,
+        "content": [
+          { "name": "Club", "extra_info": "d6" },
+          { "name": "Ether", "extra_info": null },
+          { "name": "Crowbar", "extra_info": null },
+          { "name": "Flute", "extra_info": null }
+        ]
+      },
+      {
+        "max": 16,
+        "arcana": 0,
+        "content": [
+          { "name": "Hatchet", "extra_info": "d6" },
+          { "name": "Net", "extra_info": null },
+          { "name": "Fire Oil", "extra_info": null },
+          { "name": "Burnt Face", "extra_info": null }
+        ]
+      },
+      {
+        "max": 17,
+        "arcana": 0,
+        "content": [
+          { "name": "Club", "extra_info": "d6" },
+          { "name": "Paint", "extra_info": null },
+          { "name": "Crowbar", "extra_info": null },
+          { "name": "Loud Lungs", "extra_info": null }
+        ]
+      },
+      {
+        "max": 18,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Cigars", "extra_info": null },
+          { "name": "Poison", "extra_info": null },
+          { "name": "Fugitive", "extra_info": null }
+        ]
+      }
+    ]
+  },
+  {
+    "hp": 4,
+    "starters": [
+      {
+        "max": 9,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Knife", "extra_info": "d6" },
+          { "name": "Telepathy if target fails WIL Save", "extra_info": null }
+        ]
+      },
+      {
+        "max": 10,
+        "arcana": 1,
+        "content": [
+          { "name": "Claymore", "extra_info": "d8 B" },
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "2 Acid Flasks", "extra_info": null }
+        ]
+      },
+      {
+        "max": 11,
+        "arcana": 0,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Bayonet", "extra_info": "d6" }
+        ],
+        "pet": "Mutt with telepathic link"
+      },
+      {
+        "max": 12,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Rocket", "extra_info": null },
+          { "name": "Toxin-Immune", "extra_info": null }
+        ]
+      },
+      {
+        "max": 13,
+        "arcana": 0,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Portable Ram", "extra_info": null },
+          { "name": "Game Set", "extra_info": null }
+        ]
+      },
+      {
+        "max": 14,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Saw", "extra_info": null },
+          { "name": "Animal Trap", "extra_info": null },
+          { "name": "Spyglass", "extra_info": null }
+        ]
+      },
+      {
+        "max": 15,
+        "arcana": 0,
+        "content": [
+          { "name": "Bow", "extra_info": "d6 B" },
+          { "name": "Knife", "extra_info": "d6" },
+          { "name": "Rocket", "extra_info": null },
+          { "name": "Fire Oil", "extra_info": null }
+        ]
+      },
+      {
+        "max": 16,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Whip", "extra_info": "d6" },
+          { "name": "Cigars", "extra_info": null },
+          { "name": "Lost Eye", "extra_info": null }
+        ]
+      },
+      {
+        "max": 17,
+        "arcana": 0,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Accordion", "extra_info": null },
+          { "name": "No Nose / Scent", "extra_info": null }
+        ]
+      },
+      {
+        "max": 18,
+        "arcana": 0,
+        "content": [
+          { "name": "Sword", "extra_info": "d6" },
+          { "name": "Shield", "extra_info": null },
+          { "name": "Illiterate", "extra_info": null }
+        ]
+      }
+    ]
+  },
+  {
+    "hp": 5,
+    "starters": [
+      {
+        "max": 9,
+        "arcana": 0,
+        "content": [
+          { "name": "Blunderbuss", "extra_info": "d8 B" },
+          { "name": "Hatchet", "extra_info": "d6" },
+          {
+            "name": "Dreams show your undiscovered surroundings",
+            "extra_info": null
+          }
+        ],
+        "pet": "Mutt"
+      },
+      {
+        "max": 10,
+        "arcana": 1,
+        "content": [
+          { "name": "Brace of Pistols", "extra_info": "d8 B" },
+          { "name": "Steel Wire", "extra_info": null },
+          { "name": "Grappling Hook", "extra_info": null }
+        ]
+      },
+      {
+        "max": 11,
+        "arcana": 0,
+        "content": [
+          { "name": "Machete", "extra_info": "d6" },
+          { "name": "Brace of Pistols", "extra_info": "d8 B" }
+        ],
+        "pet": "Talking Parrot",
+        "content_extra": [{ "name": "Never Sleep", "extra_info": null }]
+      },
+      {
+        "max": 12,
+        "arcana": 0,
+        "content": [
+          { "name": "Harpoon Gun", "extra_info": "d8 B" },
+          { "name": "Baton", "extra_info": "d6" },
+          { "name": "Acid", "extra_info": null },
+          { "name": "Slightly Magnetic", "extra_info": null }
+        ]
+      },
+      {
+        "max": 13,
+        "arcana": 0,
+        "content": [
+          { "name": "Bolt-Cutters", "extra_info": null },
+          { "name": "Blunderbuss", "extra_info": "d8 B" },
+          { "name": "Fiddle", "extra_info": null }
+        ]
+      },
+      {
+        "max": 14,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Grease", "extra_info": null },
+          { "name": "Hand Drill", "extra_info": null },
+          { "name": "Drum", "extra_info": null }
+        ]
+      },
+      {
+        "max": 15,
+        "arcana": 0,
+        "content": [
+          { "name": "Sword & Dagger", "extra_info": "d8 B" },
+          { "name": "Magnifying Glass", "extra_info": null },
+          { "name": "Lost Eye", "extra_info": null }
+        ]
+      },
+      {
+        "max": 16,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Acid", "extra_info": null },
+          { "name": "Animal Repellent", "extra_info": null },
+          { "name": "Prosthetic Hand", "extra_info": null }
+        ]
+      },
+      {
+        "max": 17,
+        "arcana": 0,
+        "content": [
+          { "name": "Sword", "extra_info": "d6" },
+          { "name": "Steel Wire", "extra_info": null },
+          { "name": "Ugly Mutation", "extra_info": null }
+        ]
+      },
+      {
+        "max": 18,
+        "arcana": 0,
+        "content": [
+          { "name": "Sword", "extra_info": "d6" },
+          { "name": "Ferret", "extra_info": null },
+          { "name": "Tattered Clothes", "extra_info": null },
+          { "name": "Debt (3G)", "extra_info": null }
+        ]
+      }
+    ]
+  },
+  {
+    "hp": 6,
+    "starters": [
+      {
+        "max": 9,
+        "arcana": 1,
+        "content": [
+          { "name": "Musket", "extra_info": "d8 B" },
+          { "name": "Hatchet", "extra_info": "d6" },
+          { "name": "Flashbang", "extra_info": null },
+          { "name": "Iron Limb", "extra_info": null }
+        ]
+      },
+      {
+        "max": 10,
+        "arcana": 0,
+        "content": [
+          { "name": "Rifle", "extra_info": "d8 B" },
+          { "name": "Mace", "extra_info": "d6" }
+        ],
+        "pet": "Eagle",
+        "content_extra": [{ "name": "Poison", "extra_info": null }]
+      },
+      {
+        "max": 11,
+        "arcana": 0,
+        "content": [
+          { "name": "Club", "extra_info": "d6" },
+          { "name": "3 Bombs", "extra_info": null },
+          { "name": "Rocket", "extra_info": null },
+          { "name": "Darkvision", "extra_info": null }
+        ]
+      },
+      {
+        "max": 12,
+        "arcana": 0,
+        "content": [
+          { "name": "Maul", "extra_info": "d8 B" },
+          { "name": "Dagger", "extra_info": "d6" },
+          { "name": "Chain", "extra_info": null }
+        ]
+      },
+      {
+        "max": 13,
+        "arcana": 0,
+        "content": [
+          { "name": "Longaxe", "extra_info": "d8 B" },
+          { "name": "Rum", "extra_info": null },
+          { "name": "Bomb", "extra_info": null }
+        ]
+      },
+      {
+        "max": 14,
+        "arcana": 0,
+        "content": [
+          { "name": "Dagger", "extra_info": "d6" },
+          { "name": "Fire Oil", "extra_info": null },
+          { "name": "Mirror", "extra_info": null }
+        ]
+      },
+      {
+        "max": 15,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Knife", "extra_info": "d6" },
+          { "name": "Bomb", "extra_info": null },
+          { "name": "Saw", "extra_info": null }
+        ]
+      },
+      {
+        "max": 16,
+        "arcana": 0,
+        "content": [
+          { "name": "Pistol", "extra_info": "d6" },
+          { "name": "Bomb", "extra_info": null },
+          { "name": "Shovel", "extra_info": null },
+          { "name": "Glowing Eyes", "extra_info": null }
+        ]
+      },
+      {
+        "max": 17,
+        "arcana": 0,
+        "content": [
+          { "name": "Staff", "extra_info": "d6 B" },
+          { "name": "Throwing Knives", "extra_info": "d6" }
+        ]
+      },
+      {
+        "max": 18,
+        "arcana": 0,
+        "content": [
+          { "name": "Mace", "extra_info": "d6" },
+          { "name": "Pigeon", "extra_info": null },
+          { "name": "Disfigured", "extra_info": null }
+        ]
+      }
+    ]
+  }
+]

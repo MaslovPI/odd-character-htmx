@@ -1,0 +1,24 @@
+[
+  {
+    "type": "Lighter Boy",
+    "cost_per_day": "1s",
+    "hp": "d6",
+    "str": "2d6",
+    "ability_scores": 10,
+    "equipment": ["Lantern", "Club"]
+  },
+  {
+    "type": "Mercenary",
+    "cost_per_day": "5s",
+    "hp": "2d6",
+    "ability_scores": 10,
+    "equipment": ["Musket", "Sword"]
+  },
+  {
+    "type": "Expert",
+    "cost_per_day": "10s",
+    "hp": "d6",
+    "ability_scores": 10,
+    "equipment": ["Pistol", "Experience in specific area"]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "type": "Mutt",
+    "cost": "5s",
+    "str": "d10",
+    "attack": "Bite d6"
+  },
+  {
+    "type": "Hound",
+    "cost": "50s",
+    "str": "2d6",
+    "attack": "Bite d6"
+  },
+  {
+    "type": "Parrot",
+    "cost": "10s",
+    "str": "d6",
+    "attack": "Claws d4"
+  },
+  {
+    "type": "Raven",
+    "cost": "10s",
+    "str": "d6",
+    "attack": "Claws d4"
+  },
+  {
+    "type": "Kestrel",
+    "cost": "50s",
+    "str": "d8",
+    "attack": "Claws d6"
+  },
+  {
+    "type": "Hawk",
+    "cost": "50s",
+    "str": "d8",
+    "attack": "Claws d6"
+  }
+]

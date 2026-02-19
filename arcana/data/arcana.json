@@ -1,0 +1,146 @@
+[
+  {
+    "name": "Gatekeeper’s Sigil",
+    "description": "Create a gate between two flat surfaces that you can see. The gates close if you pass through or break line of sight."
+  },
+  {
+    "name": "Pierced Heart",
+    "description": "State an object you desire. The heart indicates its direction and vague distance."
+  },
+  {
+    "name": "Pale Flame",
+    "description": "An object you touch glows with white light. Contact with the glowing object causes a chilling pain. The effect wears off when the Arcanum is used again."
+  },
+  {
+    "name": "Soul Chain",
+    "description": "Target must pass a DEX Save to avoid your touch, or they lose d6 WIL and you get a glimpse of their current desire."
+  },
+  {
+    "name": "Gavel of the Unbreakable Seal",
+    "description": "One door, window, etc. is sealed until you open it."
+  },
+  {
+    "name": "Foul Censer",
+    "description": "Green smoke surrounds you and everyone within 20ft. Missiles cannot pass through the smoke."
+  },
+  {
+    "name": "Bleeding Stave",
+    "description": "Spews blood-like oil onto a 10ft area. Anyone moving or standing on the oil must make a DEX Save to avoid falling and being unable to move on their turn. Disappears in a harmless flash if ignited."
+  },
+  {
+    "name": "Pain Idol",
+    "description": "Roll a die of your choice. If the result is odd, you lose that much STR, if it’s even your target loses that much STR."
+  },
+  {
+    "name": "Webbed Hands",
+    "description": "Climb sheer surfaces as if you were a spider."
+  },
+  {
+    "name": "Sunblessed Bands",
+    "description": "Glow and hum lightly. Anybody attacking you suffers Damage equal to that they cause to you. If you attack a target yourself then the effect ends until you Rest."
+  },
+  {
+    "name": "Flesh-Tome of Babble",
+    "description": "Speak in a strange sounding language. Every living thing is able to understand and reply in the same tongue if they wish."
+  },
+  {
+    "name": "Tyrant’s Rod",
+    "description": "Order a target to drop, fall, flee or halt unless they pass a WIL Save."
+  },
+  {
+    "name": "Black Veil",
+    "description": "Target must pass a WIL Save or is blinded until you lift the curse or they Rest. Blinded individuals may require a DEX Save to carry out other actions that rely on sight, and their attacks are Impaired."
+  },
+  {
+    "name": "Strands of Suffering",
+    "description": "Strands spread between two surfaces up to 20ft apart. Those within only move very slowly and painfully unless they pass a DEX Save."
+  },
+  {
+    "name": "Heat Ray",
+    "description": "One metal object becomes too hot to touch. If it cannot be quickly dropped or removed the wielder suffers d8 Damage, ignoring armour."
+  },
+  {
+    "name": "Miniaturisation Coil",
+    "description": "Touch an object to shrink it into a tiny miniature. Restore the object to original size at will. The original object can be up to your size, but living beings must be willing."
+  },
+  {
+    "name": "Frozen Cloud",
+    "description": "Floats at your will. Anybody within takes d6 Damage and cannot move unless they pass a STR Save."
+  },
+  {
+    "name": "Many Phase Key",
+    "description": "Phase through a wall or floor with any objects you are carrying."
+  },
+  {
+    "name": "Skull Magnet",
+    "description": "You may attract or repel a single target that has a boney skull, unless they pass a WIL Save."
+  },
+  {
+    "name": "Transreal Mirror",
+    "description": "A perfect duplicate of you is formed. It acts independently, and just like the original. It cannot interact physically with anything. The double lasts until dismissed or a new double is created."
+  },
+  {
+    "name": "Gorger’s Mask",
+    "description": "The wearer can consume anything safely."
+  },
+  {
+    "name": "Tomb Box",
+    "description": "Contains three tiny skeletons that obey whoever holds the box. They are too small to do any real damage, but are quite agile and clever."
+  },
+  {
+    "name": "Howling Lantern",
+    "description": "Blowing into the lantern causes a roar that terrifies prey animals, but attracts predators."
+  },
+  {
+    "name": "Rainbow Blade",
+    "description": "This sword (d6) can fire a beam of harmless light in any colour the wielder wishes."
+  },
+  {
+    "name": "Hawk of Prosperity",
+    "description": "A mechanical bird (3hp, d6 claws) that will only help you to accumulate wealth. Requires a Shilling each day as food."
+  },
+  {
+    "name": "Inquisitor’s Hood",
+    "description": "Speak a question with two possible answers. The target must pass a WIL Save or answer as honestly as they can. If they pass their Save you blurt out an inconvenient truth."
+  },
+  {
+    "name": "Winter’s Sickle",
+    "description": "Anybody taking Damage from this Sickle (d6) is Deprived and feels cold to their bones until they spend at least an hour warming themselves by a fire or other heat source."
+  },
+  {
+    "name": "Grief Cup",
+    "description": "Anybody drinking from this cup has upsetting visions showing the consequences of their past actions."
+  },
+  {
+    "name": "Victory Globe",
+    "description": "Swear an oath aloud. The globe gently guides you in the direction that would help you achieve the oath, but if you fail to complete it before the end of the day it lashes your mind for d12 WIL loss."
+  },
+  {
+    "name": "Moon Lens",
+    "description": "Look at two objects and ask a question. The lens highlights the one object that best answers the question. It cannot predict the future."
+  },
+  {
+    "name": "Fool’s Coin",
+    "description": "Anybody that values money will crave this coin the first time they see it. The effect wears off after an hour."
+  },
+  {
+    "name": "Chance Rose",
+    "description": "Crush this ceramic rose to change the odds of success for a single action to 50%. This cannot make the impossible possible. The rose reforms at the start of each day."
+  },
+  {
+    "name": "Homing Stick",
+    "description": "A staff that can be called to return to you, flying by the best route possible."
+  },
+  {
+    "name": "False Platter",
+    "description": "Anybody viewing this platter sees an illusion of luxury that they are craving right now."
+  },
+  {
+    "name": "Gold Visor",
+    "description": "While wearing this you visualise a general sense of somebody’s honesty and sincerity while they speak."
+  },
+  {
+    "name": "Infinity Icon",
+    "description": "You can stop time, but you can do nothing but observe and think during this time."
+  }
+]
