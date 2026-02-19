@@ -31,7 +31,7 @@ func MainContent(character models.Character) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"container\"><h1>Odd Character</h1><div id=\"stats\" class=\"stats\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"container\"><h1>Odd Character</h1><form id=\"char-form\"><div id=\"stats\" class=\"stats\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -39,7 +39,7 @@ func MainContent(character models.Character) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</div><button hx-get=\"/rollstats\" hx-target=\"#stats\" hx-swap=\"innerHTML\">Roll Stats</button><div id=\"description\" class=\"description\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</div><button type=\"button\" hx-get=\"/rollstats\" hx-target=\"#stats\" hx-swap=\"innerHTML\">Roll Stats</button><div id=\"description\" class=\"description\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -47,7 +47,7 @@ func MainContent(character models.Character) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><button hx-post=\"/generatedescription\" hx-target=\"#description\" hx-swap=\"innerHTML\" hx-include=\"#stats\">Generate Description</button></div>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</div><button type=\"button\" hx-post=\"/generatedescription\" hx-target=\"#description\" hx-swap=\"innerHTML\" hx-include=\"closest form\">Generate Description</button></form></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

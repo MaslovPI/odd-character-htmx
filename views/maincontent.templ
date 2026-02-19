@@ -5,26 +5,30 @@ import "github.com/maslovpi/odd-character-htmx/models"
 templ MainContent(character models.Character) {
 	<div class="container">
 		<h1>Odd Character</h1>
-		<div id="stats" class="stats">
-			@Stats(character.Stats)
-		</div>
-		<button
-			hx-get="/rollstats"
-			hx-target="#stats"
-			hx-swap="innerHTML"
-		>
-			Roll Stats
-		</button>
-		<div id="description" class="description">
-			@Description(character.Starter)
-		</div>
-		<button
-			hx-post="/generatedescription"
-			hx-target="#description"
-			hx-swap="innerHTML"
-			hx-include="#stats"
-		>
-			Generate Description
-		</button>
+		<form id="char-form">
+			<div id="stats" class="stats">
+				@Stats(character.Stats)
+			</div>
+			<button
+				type="button"
+				hx-get="/rollstats"
+				hx-target="#stats"
+				hx-swap="innerHTML"
+			>
+				Roll Stats
+			</button>
+			<div id="description" class="description">
+				@Description(character.Starter)
+			</div>
+			<button
+				type="button"
+				hx-post="/generatedescription"
+				hx-target="#description"
+				hx-swap="innerHTML"
+				hx-include="closest form"
+			>
+				Generate Description
+			</button>
+		</form>
 	</div>
 }
