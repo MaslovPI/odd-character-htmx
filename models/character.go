@@ -1,8 +1,8 @@
 package models
 
 type Character struct {
-	Stats   Stats
 	Starter Starter
+	Stats   Stats
 }
 
 func GetEmptyChar() Character {
