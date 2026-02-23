@@ -49,43 +49,43 @@ func TestGetEquipmentDescription(t *testing.T) {
 		want             string
 	}{
 		{
-			name:             "found by exact name with cost and description",
+			name:             "should find by exact name with cost and description",
 			inputName:        "Shield",
 			givenDescription: "",
 			want:             "Shield (Cost: 10g, Description: Adds 1 armor.)",
 		},
 		{
-			name:             "found by exact name with cost, no description",
+			name:             "should find by exact name with cost, no description",
 			inputName:        "Torch",
 			givenDescription: "",
 			want:             "Torch (Cost: 2s)",
 		},
 		{
-			name:             "found by exact name with no cost, has description",
+			name:             "should find by exact name with no cost, has description",
 			inputName:        "Mystery Box",
 			givenDescription: "",
 			want:             "Mystery Box (Cost: 0, Description: Contents unknown.)",
 		},
 		{
-			name:             "found by exact name with no cost and no description",
+			name:             "should find by exact name with no cost and no description",
 			inputName:        "Empty Item",
 			givenDescription: "",
 			want:             "Empty Item (Cost: 0)",
 		},
 		{
-			name:             "found by example name uses input name in output",
+			name:             "should find by example name uses input name in output",
 			inputName:        "Wooden Shield",
 			givenDescription: "",
 			want:             "Wooden Shield (Cost: 10g, Description: Adds 1 armor.)",
 		},
 		{
-			name:             "not found with given description falls back to name plus description",
+			name:             "should not find and should fall back to name plus description",
 			inputName:        "Rope",
 			givenDescription: "50 feet",
 			want:             "Rope (50 feet)",
 		},
 		{
-			name:             "not found with empty given description returns name only",
+			name:             "should not find and should return name only",
 			inputName:        "Rope",
 			givenDescription: "",
 			want:             "Rope",
