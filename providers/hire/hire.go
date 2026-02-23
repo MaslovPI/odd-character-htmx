@@ -21,8 +21,8 @@ type (
 		CostPerDay    string   `json:"cost_per_day"`
 		HitProtection string   `json:"hp"`
 		Strength      string   `json:"str"`
-		AbilityScores int      `json:"ability_scores"`
 		Equipment     []string `json:"equipment"`
+		AbilityScores int      `json:"ability_scores"`
 	}
 	HireProvider struct {
 		hireMap           map[string]Hire
