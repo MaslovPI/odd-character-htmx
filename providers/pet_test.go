@@ -1,4 +1,4 @@
-package pet
+package providers
 
 import (
 	"fmt"
@@ -27,7 +27,7 @@ func TestGetPetDescription(t *testing.T) {
 	}
 
 	t.Run("should return empty string and no error when pet not found", func(t *testing.T) {
-		pp := providerWithMap(mockMap)
+		pp := getPetProviderWithMap(mockMap)
 		got, err := pp.GetPetDescription("Dragon")
 		if err != nil {
 			t.Errorf("unexpected error: %v", err)
@@ -37,25 +37,28 @@ func TestGetPetDescription(t *testing.T) {
 		}
 	})
 
-	t.Run("should return description with cost, strength and attack when found", func(t *testing.T) {
-		pp := providerWithMap(mockMap)
-		got, err := pp.GetPetDescription("Mutt")
-		if err != nil {
-			t.Fatalf("unexpected error: %v", err)
-		}
-		if !strings.Contains(got, "Cost: 5s") {
-			t.Errorf("expected cost in description, got %q", got)
-		}
-		if !strings.Contains(got, "Attack: Bite d6") {
-			t.Errorf("expected attack in description, got %q", got)
-		}
-		if !strings.Contains(got, "Strength:") {
-			t.Errorf("expected strength in description, got %q", got)
-		}
-	})
+	t.Run(
+		"should return description with cost, strength and attack when found",
+		func(t *testing.T) {
+			pp := getPetProviderWithMap(mockMap)
+			got, err := pp.GetPetDescription("Mutt")
+			if err != nil {
+				t.Fatalf("unexpected error: %v", err)
+			}
+			if !strings.Contains(got, "Cost: 5s") {
+				t.Errorf("expected cost in description, got %q", got)
+			}
+			if !strings.Contains(got, "Attack: Bite d6") {
+				t.Errorf("expected attack in description, got %q", got)
+			}
+			if !strings.Contains(got, "Strength:") {
+				t.Errorf("expected strength in description, got %q", got)
+			}
+		},
+	)
 
 	t.Run("should roll strength within dice range", func(t *testing.T) {
-		pp := providerWithMap(mockMap)
+		pp := getPetProviderWithMap(mockMap)
 		for range 20 {
 			got, err := pp.GetPetDescription("Mutt")
 			if err != nil {
@@ -78,7 +81,7 @@ func TestGetPetDescription(t *testing.T) {
 				Attack:   "Spook",
 			},
 		}
-		pp := providerWithMap(badMap)
+		pp := getPetProviderWithMap(badMap)
 		_, err := pp.GetPetDescription("Ghost")
 		if err == nil {
 			t.Error("expected error for invalid dice format, got nil")
@@ -86,6 +89,6 @@ func TestGetPetDescription(t *testing.T) {
 	})
 }
 
-func providerWithMap(m map[string]Pet) PetProvider {
+func getPetProviderWithMap(m map[string]Pet) PetProvider {
 	return PetProvider{petMap: m}
 }

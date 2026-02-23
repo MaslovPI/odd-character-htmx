@@ -1,4 +1,4 @@
-package hire
+package providers
 
 import (
 	_ "embed"
@@ -9,7 +9,6 @@ import (
 	"time"
 
 	"github.com/maslovpi/odd-character-htmx/functions"
-	"github.com/maslovpi/odd-character-htmx/providers/equipment"
 )
 
 //go:embed data/hires.json
@@ -26,11 +25,11 @@ type (
 	}
 	HireProvider struct {
 		hireMap           map[string]Hire
-		equipmentProvider equipment.EquipmentProvider
+		equipmentProvider EquipmentProvider
 	}
 )
 
-func InitEquipmentProvider(equipmentProvider equipment.EquipmentProvider) (HireProvider, error) {
+func InitHireProvider(equipmentProvider EquipmentProvider) (HireProvider, error) {
 	hireMap, err := getHireMap()
 	return HireProvider{hireMap: hireMap, equipmentProvider: equipmentProvider}, err
 }

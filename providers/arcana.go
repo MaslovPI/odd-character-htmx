@@ -1,4 +1,4 @@
-package arcana
+package providers
 
 import (
 	_ "embed"

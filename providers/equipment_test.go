@@ -1,4 +1,4 @@
-package equipment
+package providers
 
 import (
 	"testing"
@@ -94,7 +94,7 @@ func TestGetEquipmentDescription(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			ep := providerWithMap(mockMap)
+			ep := getEquipmentProviderWithMap(mockMap)
 			got := ep.GetEquipmentDescription(tt.inputName, tt.givenDescription)
 			if got != tt.want {
 				t.Errorf("GetEquipmentDescription(%q, %q) = %q; want %q",
@@ -104,6 +104,6 @@ func TestGetEquipmentDescription(t *testing.T) {
 	}
 }
 
-func providerWithMap(m map[string]Equipment) EquipmentProvider {
+func getEquipmentProviderWithMap(m map[string]Equipment) EquipmentProvider {
 	return EquipmentProvider{equipmentMap: m}
 }

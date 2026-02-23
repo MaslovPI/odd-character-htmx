@@ -1,4 +1,4 @@
-package equipment
+package providers
 
 import (
 	_ "embed"

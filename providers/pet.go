@@ -1,4 +1,4 @@
-package pet
+package providers
 
 import (
 	_ "embed"
