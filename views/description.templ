@@ -2,7 +2,7 @@ package views
 
 import "github.com/maslovpi/odd-character-htmx/models"
 
-templ Description(starter models.Starter) {
+templ Description(starter models.Description) {
 	if len(starter.Content) != 0 {
 		<p>Starting equipment: { starter.Content }</p>
 	}

@@ -1,14 +1,14 @@
 package models
 
 type Character struct {
-	Starter Starter
-	Stats   Stats
+	Description Description
+	Stats       Stats
 }
 
 func GetEmptyChar() Character {
 	character := Character{
-		Stats:   Stats{},
-		Starter: Starter{},
+		Stats:       Stats{},
+		Description: Description{},
 	}
 	return character
 }
