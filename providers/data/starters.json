@@ -4,7 +4,7 @@
     "starters": [
       {
         "max": 9,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Sword", "extra_info": "d6" },
           { "name": "Pistol", "extra_info": "d6" },
@@ -14,7 +14,7 @@
       },
       {
         "max": 10,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Rifle", "extra_info": "d8 B" },
           { "name": "Bayonet", "extra_info": "d6" }
@@ -23,7 +23,7 @@
       },
       {
         "max": 11,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Rifle", "extra_info": "d8 B" },
           { "name": "Modern Armour", "extra_info": null }
@@ -32,7 +32,7 @@
       },
       {
         "max": 12,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Club", "extra_info": "d6" },
           { "name": "Throwing Knives", "extra_info": null }
@@ -40,7 +40,7 @@
       },
       {
         "max": 13,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Ether", "extra_info": null },
@@ -49,7 +49,7 @@
       },
       {
         "max": 14,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Cane", "extra_info": "d6" },
           { "name": "Acid", "extra_info": null },
@@ -58,7 +58,7 @@
       },
       {
         "max": 15,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Brace of Pistols", "extra_info": "d8 B" },
           { "name": "Canary", "extra_info": null },
@@ -67,7 +67,7 @@
       },
       {
         "max": 16,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Pocket-watch", "extra_info": null },
@@ -76,7 +76,7 @@
       },
       {
         "max": 17,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Halberd", "extra_info": "d8 B" },
           { "name": "Fake Pistol", "extra_info": null },
@@ -85,7 +85,7 @@
       },
       {
         "max": 18,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Garotte", "extra_info": "d6" },
           { "name": "Musket", "extra_info": "d8 B" },
@@ -99,7 +99,7 @@
     "starters": [
       {
         "max": 9,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Sword", "extra_info": "d6" },
@@ -109,7 +109,7 @@
       },
       {
         "max": 10,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Hatchet", "extra_info": "d6" }
@@ -118,7 +118,7 @@
       },
       {
         "max": 11,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Hatchet", "extra_info": "d6" },
           { "name": "Pistol", "extra_info": "d6" },
@@ -127,7 +127,7 @@
       },
       {
         "max": 12,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Mule", "extra_info": null }
@@ -135,7 +135,7 @@
       },
       {
         "max": 13,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Sword", "extra_info": "d6" },
           { "name": "Pistol", "extra_info": "d6" },
@@ -144,7 +144,7 @@
       },
       {
         "max": 14,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Bell", "extra_info": null },
@@ -154,7 +154,7 @@
       },
       {
         "max": 15,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Longaxe", "extra_info": "d8 B" },
           { "name": "Fire Oil", "extra_info": null }
@@ -163,7 +163,7 @@
       },
       {
         "max": 16,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Staff", "extra_info": "d6 B" },
           { "name": "Tongs", "extra_info": null },
@@ -172,7 +172,7 @@
       },
       {
         "max": 17,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Net", "extra_info": null },
@@ -182,7 +182,7 @@
       },
       {
         "max": 18,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Grease", "extra_info": null },
@@ -197,7 +197,7 @@
     "starters": [
       {
         "max": 9,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Club", "extra_info": "d6" },
@@ -206,7 +206,7 @@
       },
       {
         "max": 10,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Protective Gloves", "extra_info": null }
@@ -214,7 +214,7 @@
       },
       {
         "max": 11,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Mallet", "extra_info": null },
@@ -224,7 +224,7 @@
       },
       {
         "max": 12,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Pick-Axe", "extra_info": "d6" },
           { "name": "Manacles", "extra_info": null }
@@ -232,7 +232,7 @@
       },
       {
         "max": 13,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Smoke-bomb", "extra_info": null },
@@ -242,7 +242,7 @@
       },
       {
         "max": 14,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Longaxe", "extra_info": "d8 B" },
           { "name": "Throwing Axes", "extra_info": null },
@@ -251,7 +251,7 @@
       },
       {
         "max": 15,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Club", "extra_info": "d6" },
           { "name": "Ether", "extra_info": null },
@@ -261,7 +261,7 @@
       },
       {
         "max": 16,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Hatchet", "extra_info": "d6" },
           { "name": "Net", "extra_info": null },
@@ -271,7 +271,7 @@
       },
       {
         "max": 17,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Club", "extra_info": "d6" },
           { "name": "Paint", "extra_info": null },
@@ -281,7 +281,7 @@
       },
       {
         "max": 18,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Cigars", "extra_info": null },
@@ -296,7 +296,7 @@
     "starters": [
       {
         "max": 9,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Knife", "extra_info": "d6" },
@@ -305,7 +305,7 @@
       },
       {
         "max": 10,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Claymore", "extra_info": "d8 B" },
           { "name": "Pistol", "extra_info": "d6" },
@@ -314,7 +314,7 @@
       },
       {
         "max": 11,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Bayonet", "extra_info": "d6" }
@@ -323,7 +323,7 @@
       },
       {
         "max": 12,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Rocket", "extra_info": null },
@@ -332,7 +332,7 @@
       },
       {
         "max": 13,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Portable Ram", "extra_info": null },
@@ -341,7 +341,7 @@
       },
       {
         "max": 14,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Saw", "extra_info": null },
@@ -351,7 +351,7 @@
       },
       {
         "max": 15,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Bow", "extra_info": "d6 B" },
           { "name": "Knife", "extra_info": "d6" },
@@ -361,7 +361,7 @@
       },
       {
         "max": 16,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Whip", "extra_info": "d6" },
@@ -371,7 +371,7 @@
       },
       {
         "max": 17,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Accordion", "extra_info": null },
@@ -380,7 +380,7 @@
       },
       {
         "max": 18,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Sword", "extra_info": "d6" },
           { "name": "Shield", "extra_info": null },
@@ -394,7 +394,7 @@
     "starters": [
       {
         "max": 9,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Blunderbuss", "extra_info": "d8 B" },
           { "name": "Hatchet", "extra_info": "d6" },
@@ -407,7 +407,7 @@
       },
       {
         "max": 10,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Brace of Pistols", "extra_info": "d8 B" },
           { "name": "Steel Wire", "extra_info": null },
@@ -416,7 +416,7 @@
       },
       {
         "max": 11,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Machete", "extra_info": "d6" },
           { "name": "Brace of Pistols", "extra_info": "d8 B" }
@@ -426,7 +426,7 @@
       },
       {
         "max": 12,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Harpoon Gun", "extra_info": "d8 B" },
           { "name": "Baton", "extra_info": "d6" },
@@ -436,7 +436,7 @@
       },
       {
         "max": 13,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Bolt-Cutters", "extra_info": null },
           { "name": "Blunderbuss", "extra_info": "d8 B" },
@@ -445,7 +445,7 @@
       },
       {
         "max": 14,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Grease", "extra_info": null },
@@ -455,7 +455,7 @@
       },
       {
         "max": 15,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Sword & Dagger", "extra_info": "d8 B" },
           { "name": "Magnifying Glass", "extra_info": null },
@@ -464,7 +464,7 @@
       },
       {
         "max": 16,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Acid", "extra_info": null },
@@ -474,7 +474,7 @@
       },
       {
         "max": 17,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Sword", "extra_info": "d6" },
           { "name": "Steel Wire", "extra_info": null },
@@ -483,7 +483,7 @@
       },
       {
         "max": 18,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Sword", "extra_info": "d6" },
           { "name": "Ferret", "extra_info": null },
@@ -498,7 +498,7 @@
     "starters": [
       {
         "max": 9,
-        "arcana": 1,
+        "arcana": true,
         "content": [
           { "name": "Musket", "extra_info": "d8 B" },
           { "name": "Hatchet", "extra_info": "d6" },
@@ -508,7 +508,7 @@
       },
       {
         "max": 10,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Rifle", "extra_info": "d8 B" },
           { "name": "Mace", "extra_info": "d6" }
@@ -518,7 +518,7 @@
       },
       {
         "max": 11,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Club", "extra_info": "d6" },
           { "name": "3 Bombs", "extra_info": null },
@@ -528,7 +528,7 @@
       },
       {
         "max": 12,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Maul", "extra_info": "d8 B" },
           { "name": "Dagger", "extra_info": "d6" },
@@ -537,7 +537,7 @@
       },
       {
         "max": 13,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Longaxe", "extra_info": "d8 B" },
           { "name": "Rum", "extra_info": null },
@@ -546,7 +546,7 @@
       },
       {
         "max": 14,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Dagger", "extra_info": "d6" },
           { "name": "Fire Oil", "extra_info": null },
@@ -555,7 +555,7 @@
       },
       {
         "max": 15,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Knife", "extra_info": "d6" },
@@ -565,7 +565,7 @@
       },
       {
         "max": 16,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Pistol", "extra_info": "d6" },
           { "name": "Bomb", "extra_info": null },
@@ -575,7 +575,7 @@
       },
       {
         "max": 17,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Staff", "extra_info": "d6 B" },
           { "name": "Throwing Knives", "extra_info": "d6" }
@@ -583,7 +583,7 @@
       },
       {
         "max": 18,
-        "arcana": 0,
+        "arcana": false,
         "content": [
           { "name": "Mace", "extra_info": "d6" },
           { "name": "Pigeon", "extra_info": null },

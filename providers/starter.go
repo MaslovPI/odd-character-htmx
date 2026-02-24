@@ -14,7 +14,7 @@ type (
 		Pet     string    `json:"pet"`
 		Content []Content `json:"content"`
 		Max     int       `json:"max"`
-		Arcana  byte      `json:"arcana"`
+		Arcana  bool      `json:"arcana"`
 	}
 	Content struct {
 		Name      string `json:"name"`
