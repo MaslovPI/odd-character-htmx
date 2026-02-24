@@ -10,19 +10,19 @@ var starterJSON []byte
 
 type (
 	Starter struct {
-		Max     int       `json:"max"`
-		Arcana  byte      `json:"arcana"`
-		Content []Content `json:"content"`
 		Hire    string    `json:"hire"`
 		Pet     string    `json:"pet"`
+		Content []Content `json:"content"`
+		Max     int       `json:"max"`
+		Arcana  byte      `json:"arcana"`
 	}
 	Content struct {
 		Name      string `json:"name"`
 		ExtraInfo string `json:"extra_info"`
 	}
 	Column struct {
-		HitProtection int       `json:"hp"`
 		Starters      []Starter `json:"starters"`
+		HitProtection int       `json:"hp"`
 	}
 	Key struct {
 		HitProtection, Max int
