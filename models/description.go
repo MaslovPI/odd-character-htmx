@@ -4,12 +4,15 @@ type (
 	NamedItem struct {
 		Name        string
 		Description string
-		NotEmpty    bool
 	}
 	Description struct {
-		Content string
+		Content []NamedItem
 		Arcana  NamedItem
 		Pet     NamedItem
 		Hire    NamedItem
 	}
 )
+
+func (ni *NamedItem) IsEmpty() bool {
+	return ni.Name == ""
+}

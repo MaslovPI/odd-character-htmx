@@ -1,7 +1,10 @@
 package providers
 
 import (
+	"reflect"
 	"testing"
+
+	"github.com/maslovpi/odd-character-htmx/models"
 )
 
 func TestInitEquipmentProvider(t *testing.T) {
@@ -19,7 +22,7 @@ func TestGetEquipmentDescription(t *testing.T) {
 		"Shield": {
 			Name:        "Shield",
 			Cost:        "10g",
-			Description: "Adds 1 armor.",
+			Description: "Adds 1 armor",
 			Examples:    []string{"Wooden Shield", "Iron Shield"},
 		},
 		"Torch": {
@@ -31,7 +34,7 @@ func TestGetEquipmentDescription(t *testing.T) {
 		"Mystery Box": {
 			Name:        "Mystery Box",
 			Cost:        "",
-			Description: "Contents unknown.",
+			Description: "Contents unknown",
 			Examples:    nil,
 		},
 		"Empty Item": {
@@ -46,49 +49,69 @@ func TestGetEquipmentDescription(t *testing.T) {
 		name             string
 		inputName        string
 		givenDescription string
-		want             string
+		want             models.NamedItem
 	}{
 		{
 			name:             "should find by exact name with cost and description",
 			inputName:        "Shield",
 			givenDescription: "",
-			want:             "Shield (Cost: 10g, Description: Adds 1 armor.)",
+			want: models.NamedItem{
+				Name:        "Shield",
+				Description: "Cost: 10g, Description: Adds 1 armor",
+			},
 		},
 		{
 			name:             "should find by exact name with cost, no description",
 			inputName:        "Torch",
 			givenDescription: "",
-			want:             "Torch (Cost: 2s)",
+			want: models.NamedItem{
+				Name:        "Torch",
+				Description: "Cost: 2s",
+			},
 		},
 		{
 			name:             "should find by exact name with no cost, has description",
 			inputName:        "Mystery Box",
 			givenDescription: "",
-			want:             "Mystery Box (Cost: 0, Description: Contents unknown.)",
+			want: models.NamedItem{
+				Name:        "Mystery Box",
+				Description: "Cost: 0, Description: Contents unknown",
+			},
 		},
 		{
 			name:             "should find by exact name with no cost and no description",
 			inputName:        "Empty Item",
 			givenDescription: "",
-			want:             "Empty Item (Cost: 0)",
+			want: models.NamedItem{
+				Name:        "Empty Item",
+				Description: "Cost: 0",
+			},
 		},
 		{
 			name:             "should find by example name uses input name in output",
 			inputName:        "Wooden Shield",
 			givenDescription: "",
-			want:             "Wooden Shield (Cost: 10g, Description: Adds 1 armor.)",
+			want: models.NamedItem{
+				Name:        "Wooden Shield",
+				Description: "Cost: 10g, Description: Adds 1 armor",
+			},
 		},
 		{
 			name:             "should not find and should fall back to name plus description",
 			inputName:        "Rope",
 			givenDescription: "50 feet",
-			want:             "Rope (50 feet)",
+			want: models.NamedItem{
+				Name:        "Rope",
+				Description: "50 feet",
+			},
 		},
 		{
 			name:             "should not find and should return name only",
 			inputName:        "Rope",
 			givenDescription: "",
-			want:             "Rope",
+			want: models.NamedItem{
+				Name: "Rope",
+			},
 		},
 	}
 
@@ -96,8 +119,8 @@ func TestGetEquipmentDescription(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			ep := getEquipmentProviderWithMap(mockMap)
 			got := ep.GetEquipmentDescription(tt.inputName, tt.givenDescription)
-			if got != tt.want {
-				t.Errorf("GetEquipmentDescription(%q, %q) = %q; want %q",
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("GetEquipmentDescription(%v, %v) = %v; want %v",
 					tt.inputName, tt.givenDescription, got, tt.want)
 			}
 		})

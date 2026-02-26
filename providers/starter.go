@@ -4,7 +4,6 @@ import (
 	_ "embed"
 	"encoding/json"
 	"errors"
-	"strings"
 
 	"github.com/maslovpi/odd-character-htmx/models"
 )
@@ -98,14 +97,13 @@ func (sp *StarterProvider) GenerateStarter(hp, maxStat int) (models.Description,
 		return models.Description{}, errors.New("starter not found")
 	}
 
-	contentDescription := sp.getDescriptionFromContentList(item.Content)
+	contentDescription := sp.getItemsFromContentList(item.Content)
 
 	arcana := models.NamedItem{}
 	if item.Arcana {
 		retreivedArcana := sp.arcanaProvider.GetRandomArcana()
 		arcana.Name = retreivedArcana.Name
 		arcana.Description = retreivedArcana.Description
-		arcana.NotEmpty = true
 	}
 
 	pet := models.NamedItem{}
@@ -116,7 +114,6 @@ func (sp *StarterProvider) GenerateStarter(hp, maxStat int) (models.Description,
 		}
 		pet.Name = item.Pet
 		pet.Description = description
-		pet.NotEmpty = true
 	}
 
 	hire := models.NamedItem{}
@@ -127,7 +124,6 @@ func (sp *StarterProvider) GenerateStarter(hp, maxStat int) (models.Description,
 		}
 		hire.Name = item.Hire
 		hire.Description = description
-		hire.NotEmpty = true
 	}
 
 	starter := models.Description{
@@ -139,15 +135,13 @@ func (sp *StarterProvider) GenerateStarter(hp, maxStat int) (models.Description,
 	return starter, nil
 }
 
-func (sp *StarterProvider) getDescriptionFromContentList(contentSlice []Content) string {
-	var description strings.Builder
+func (sp *StarterProvider) getItemsFromContentList(contentSlice []Content) []models.NamedItem {
+	namedItems := make([]models.NamedItem, len(contentSlice))
 	for i, content := range contentSlice {
-		if i > 0 {
-			description.WriteString("<br>")
-		}
-		description.WriteString(
-			sp.equipmentProvider.GetEquipmentDescription(content.Name, content.ExtraInfo),
+		namedItems[i] = sp.equipmentProvider.GetEquipmentDescription(
+			content.Name,
+			content.ExtraInfo,
 		)
 	}
-	return description.String()
+	return namedItems
 }

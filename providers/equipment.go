@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"slices"
 	"strings"
+
+	"github.com/maslovpi/odd-character-htmx/models"
 )
 
 //go:embed data/equipment.json
@@ -43,23 +45,22 @@ func getEquipmentMap() (map[string]Equipment, error) {
 	return equipmentMap, nil
 }
 
-func (e *EquipmentProvider) GetEquipmentDescription(name, givenDescription string) string {
+func (e *EquipmentProvider) GetEquipmentDescription(
+	name, givenDescription string,
+) models.NamedItem {
 	equipment, exists := e.getByName(name)
 	if !exists {
 		equipment, exists = e.getByExample(name)
 	}
 
 	if exists {
-		return equipment.constructDescription(name)
+		return models.NamedItem{Name: name, Description: equipment.constructDescription()}
 	}
 
-	if givenDescription != "" {
-		return fmt.Sprintf("%s (%s)", name, givenDescription)
-	}
-	return name
+	return models.NamedItem{Name: name, Description: givenDescription}
 }
 
-func (e *Equipment) constructDescription(nameToUse string) string {
+func (e *Equipment) constructDescription() string {
 	cost := "0"
 	if e.Cost != "" {
 		cost = e.Cost
@@ -70,7 +71,7 @@ func (e *Equipment) constructDescription(nameToUse string) string {
 		parts = append(parts, fmt.Sprintf("Description: %s", e.Description))
 	}
 
-	return fmt.Sprintf("%s (%s)", nameToUse, strings.Join(parts, ", "))
+	return strings.Join(parts, ", ")
 }
 
 func (e *EquipmentProvider) getByName(name string) (Equipment, bool) {

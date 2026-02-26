@@ -56,9 +56,14 @@ func TestGenerateStarter(t *testing.T) {
 
 	mockEquipmentProvider := EquipmentProvider{
 		equipmentMap: map[string]Equipment{
-			"Torch":   {Name: "Torch", Cost: "2s", Description: "", Examples: nil},
-			"Shield":  {Name: "Shield", Cost: "10g", Description: "Adds 1 armor.", Examples: nil},
-			"Lantern": {Name: "Lantern", Cost: "5s", Description: "Burns for 6 hours.", Examples: nil},
+			"Torch":  {Name: "Torch", Cost: "2s", Description: "", Examples: nil},
+			"Shield": {Name: "Shield", Cost: "10g", Description: "Adds 1 armor.", Examples: nil},
+			"Lantern": {
+				Name:        "Lantern",
+				Cost:        "5s",
+				Description: "Burns for 6 hours.",
+				Examples:    nil,
+			},
 		},
 	}
 
@@ -100,7 +105,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Content == "" {
+		if len(got.Content) == 0 {
 			t.Error("expected non-empty content")
 		}
 	})
@@ -111,7 +116,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Content == "" {
+		if len(got.Content) == 0 {
 			t.Error("expected non-empty content for clamped maxStat")
 		}
 	})
@@ -122,7 +127,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Arcana.NotEmpty {
+		if !got.Arcana.IsEmpty() {
 			t.Error("expected arcana to be empty")
 		}
 	})
@@ -133,7 +138,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if !got.Arcana.NotEmpty {
+		if got.Arcana.IsEmpty() {
 			t.Error("expected arcana to be populated")
 		}
 		if got.Arcana.Name == "" {
@@ -147,7 +152,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if !got.Pet.NotEmpty {
+		if got.Pet.IsEmpty() {
 			t.Error("expected pet to be populated")
 		}
 		if got.Pet.Name != "Mutt" {
@@ -161,7 +166,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Pet.NotEmpty {
+		if !got.Pet.IsEmpty() {
 			t.Error("expected pet to be empty")
 		}
 	})
@@ -172,7 +177,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if !got.Hire.NotEmpty {
+		if got.Hire.IsEmpty() {
 			t.Error("expected hire to be populated")
 		}
 		if got.Hire.Name != "Guard" {
@@ -186,7 +191,7 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Hire.NotEmpty {
+		if !got.Hire.IsEmpty() {
 			t.Error("expected hire to be empty")
 		}
 	})
