@@ -53,7 +53,7 @@ func (p *PetProvider) GetPetDescription(petToFind string) (string, error) {
 		return "", err
 	}
 	description := fmt.Sprintf(
-		"Cost: %s<br>Strength: %d<br>Attack: %s",
+		"Cost: %s, Strength: %d, Attack: %s",
 		item.Cost,
 		rolledStrength,
 		item.Attack,

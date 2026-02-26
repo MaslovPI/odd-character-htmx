@@ -19,22 +19,4 @@ templ Description(starter models.Description) {
 			</il>
 		</div>
 	}
-	if !starter.Arcana.IsEmpty() {
-		<div>
-			<h3>{ starter.Arcana.Name }:</h3>
-			{ starter.Arcana.Description }
-		</div>
-	}
-	if !starter.Pet.IsEmpty() {
-		<div>
-			<h3>{ starter.Pet.Name }:</h3>
-			@templ.Raw(starter.Pet.Description)
-		</div>
-	}
-	if !starter.Hire.IsEmpty() {
-		<div>
-			<h3>{ starter.Hire.Name }:</h3>
-			@templ.Raw(starter.Hire.Description)
-		</div>
-	}
 }

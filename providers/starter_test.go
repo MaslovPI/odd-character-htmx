@@ -2,6 +2,8 @@ package providers
 
 import (
 	"testing"
+
+	"github.com/maslovpi/odd-character-htmx/models"
 )
 
 func TestInitStarterProvider(t *testing.T) {
@@ -127,8 +129,10 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if !got.Arcana.IsEmpty() {
-			t.Error("expected arcana to be empty")
+		for _, item := range got.Content {
+			if item.Type == models.Arcana {
+				t.Error("expected arcana to be empty")
+			}
 		}
 	})
 
@@ -138,12 +142,15 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Arcana.IsEmpty() {
-			t.Error("expected arcana to be populated")
+		for _, item := range got.Content {
+			if item.Type == models.Arcana {
+				if item.Name == "" {
+					t.Error("expected arcana name to be non-empty")
+				}
+				return
+			}
 		}
-		if got.Arcana.Name == "" {
-			t.Error("expected arcana name to be non-empty")
-		}
+		t.Error("expected arcana to be populated")
 	})
 
 	t.Run("should populate pet when pet is set", func(t *testing.T) {
@@ -152,12 +159,15 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Pet.IsEmpty() {
-			t.Error("expected pet to be populated")
+		for _, item := range got.Content {
+			if item.Type == models.Pet {
+				if item.Name != "Mutt" {
+					t.Errorf("expected pet name %q, got %q", "Mutt", item.Name)
+				}
+				return
+			}
 		}
-		if got.Pet.Name != "Mutt" {
-			t.Errorf("expected pet name %q, got %q", "Mutt", got.Pet.Name)
-		}
+		t.Error("expected pet to be populated")
 	})
 
 	t.Run("should not populate pet when pet is empty", func(t *testing.T) {
@@ -166,8 +176,10 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if !got.Pet.IsEmpty() {
-			t.Error("expected pet to be empty")
+		for _, item := range got.Content {
+			if item.Type == models.Pet {
+				t.Error("expected pet to be empty")
+			}
 		}
 	})
 
@@ -177,12 +189,15 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if got.Hire.IsEmpty() {
-			t.Error("expected hire to be populated")
+		for _, item := range got.Content {
+			if item.Type == models.Hire {
+				if item.Name != "Guard" {
+					t.Errorf("expected hire name %q, got %q", "Guard", item.Name)
+				}
+				return
+			}
 		}
-		if got.Hire.Name != "Guard" {
-			t.Errorf("expected hire name %q, got %q", "Guard", got.Hire.Name)
-		}
+		t.Error("expected hire to be populated")
 	})
 
 	t.Run("should not populate hire when hire is empty", func(t *testing.T) {
@@ -191,8 +206,10 @@ func TestGenerateStarter(t *testing.T) {
 		if err != nil {
 			t.Fatalf("unexpected error: %v", err)
 		}
-		if !got.Hire.IsEmpty() {
-			t.Error("expected hire to be empty")
+		for _, item := range got.Content {
+			if item.Type == models.Hire {
+				t.Error("expected hire to be empty")
+			}
 		}
 	})
 }

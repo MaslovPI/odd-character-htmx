@@ -97,40 +97,33 @@ func (sp *StarterProvider) GenerateStarter(hp, maxStat int) (models.Description,
 		return models.Description{}, errors.New("starter not found")
 	}
 
-	contentDescription := sp.getItemsFromContentList(item.Content)
+	contentList := sp.getItemsFromContentList(item.Content)
 
-	arcana := models.NamedItem{}
 	if item.Arcana {
-		retreivedArcana := sp.arcanaProvider.GetRandomArcana()
-		arcana.Name = retreivedArcana.Name
-		arcana.Description = retreivedArcana.Description
+		arcana := sp.arcanaProvider.GetRandomArcana()
+		contentList = append(contentList, arcana)
 	}
 
-	pet := models.NamedItem{}
 	if item.Pet != "" {
 		description, err := sp.petProvider.GetPetDescription(item.Pet)
 		if err != nil {
 			return models.Description{}, err
 		}
-		pet.Name = item.Pet
-		pet.Description = description
+		pet := models.NamedItem{Name: item.Pet, Description: description, Type: models.Pet}
+		contentList = append(contentList, pet)
 	}
 
-	hire := models.NamedItem{}
 	if item.Hire != "" {
 		description, err := sp.hireProvider.GetHireDescription(item.Hire)
 		if err != nil {
 			return models.Description{}, err
 		}
-		hire.Name = item.Hire
-		hire.Description = description
+		hire := models.NamedItem{Name: item.Hire, Description: description, Type: models.Hire}
+		contentList = append(contentList, hire)
 	}
 
 	starter := models.Description{
-		Content: contentDescription,
-		Arcana:  arcana,
-		Pet:     pet,
-		Hire:    hire,
+		Content: contentList,
 	}
 	return starter, nil
 }

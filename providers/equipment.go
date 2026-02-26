@@ -54,10 +54,14 @@ func (e *EquipmentProvider) GetEquipmentDescription(
 	}
 
 	if exists {
-		return models.NamedItem{Name: name, Description: equipment.constructDescription()}
+		return models.NamedItem{
+			Name:        name,
+			Description: equipment.constructDescription(),
+			Type:        models.Equipment,
+		}
 	}
 
-	return models.NamedItem{Name: name, Description: givenDescription}
+	return models.NamedItem{Name: name, Description: givenDescription, Type: models.Equipment}
 }
 
 func (e *Equipment) constructDescription() string {

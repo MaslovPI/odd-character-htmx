@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"math/rand"
 	"time"
+
+	"github.com/maslovpi/odd-character-htmx/models"
 )
 
 //go:embed data/arcana.json
@@ -31,8 +33,12 @@ func getArcanaSlice() ([]Arcana, error) {
 	return arcanaSlice, err
 }
 
-func (a *ArcanaProvider) GetRandomArcana() Arcana {
-	return a.arcanaSlice[getRandomIndex(len(a.arcanaSlice))]
+func (ap *ArcanaProvider) GetRandomArcana() models.NamedItem {
+	return ap.arcanaSlice[getRandomIndex(len(ap.arcanaSlice))].ToNamedItem()
+}
+
+func (a *Arcana) ToNamedItem() models.NamedItem {
+	return models.NamedItem{Name: a.Name, Description: a.Description, Type: models.Arcana}
 }
 
 func getRandomIndex(length int) int {
