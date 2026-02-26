@@ -49,7 +49,7 @@ func generateDescription(w http.ResponseWriter, r *http.Request) error {
 		return &appError{err, "invalid hp", http.StatusBadRequest}
 	}
 
-	description, err := starterProvider.GenerateStarter(maxStat, hp)
+	description, err := starterProvider.GenerateStarter(hp, maxStat)
 	if err != nil {
 		return &appError{err, "not able to generate starter", http.StatusInternalServerError}
 	}
