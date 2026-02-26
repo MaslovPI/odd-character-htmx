@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"log/slog"
 	"net/http"
 	"os"
@@ -8,6 +9,7 @@ import (
 
 	"github.com/a-h/templ"
 	"github.com/maslovpi/odd-character-htmx/models"
+	"github.com/maslovpi/odd-character-htmx/providers"
 	"github.com/maslovpi/odd-character-htmx/views"
 )
 
@@ -47,11 +49,24 @@ func generateDescription(w http.ResponseWriter, r *http.Request) error {
 		return &appError{err, "invalid hp", http.StatusBadRequest}
 	}
 
-	templ.Handler(views.Description(models.GenerateStarter(maxStat, hp))).ServeHTTP(w, r)
+	description, err := starterProvider.GenerateStarter(maxStat, hp)
+	if err != nil {
+		return &appError{err, "not able to generate starter", http.StatusInternalServerError}
+	}
+
+	templ.Handler(views.Description(description)).ServeHTTP(w, r)
 	return nil
 }
 
+var starterProvider providers.StarterProvider
+
 func main() {
+	var err error
+	starterProvider, err = providers.InitStarterProvider()
+	if err != nil {
+		log.Fatalf("starter provider is not initialized: %v", err)
+	}
+
 	slog.SetDefault(slog.New(slog.NewTextHandler(os.Stdout, nil)))
 
 	mux := http.NewServeMux()

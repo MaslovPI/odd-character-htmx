@@ -10,7 +10,7 @@ func TestInitHireProvider(t *testing.T) {
 	if err != nil {
 		t.Fatalf("unexpected error initializing equipment provider: %v", err)
 	}
-	hp, err := InitHireProvider(ep)
+	hp, err := InitHireProvider(&ep)
 	if err != nil {
 		t.Fatalf("unexpected error: %v", err)
 	}
@@ -119,5 +119,5 @@ func TestGetHireDescription(t *testing.T) {
 }
 
 func getHireProviderWithMap(m map[string]Hire, ep EquipmentProvider) HireProvider {
-	return HireProvider{hireMap: m, equipmentProvider: ep}
+	return HireProvider{hireMap: m, equipmentProvider: &ep}
 }

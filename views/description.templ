@@ -6,13 +6,13 @@ templ Description(starter models.Description) {
 	if len(starter.Content) != 0 {
 		<p>Starting equipment: { starter.Content }</p>
 	}
-	if len(starter.Arcana) != 0 {
-		<p>Arcana: { starter.Arcana }</p>
+	if starter.Arcana.NotEmpty {
+		<p><b>{ starter.Arcana.Name }</b>: { starter.Arcana.Description }</p>
 	}
-	if len(starter.Pet) != 0 {
-		<p>Pet: { starter.Pet }</p>
+	if starter.Pet.NotEmpty {
+		<p><b>{ starter.Pet.Name }</b>: { starter.Pet.Description }</p>
 	}
-	if len(starter.Hire) != 0 {
-		<p>Hireling: { starter.Hire }</p>
+	if starter.Hire.NotEmpty {
+		<p><b>{ starter.Hire.Name }</b>: { starter.Hire.Description }</p>
 	}
 }

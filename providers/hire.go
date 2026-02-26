@@ -25,11 +25,11 @@ type (
 	}
 	HireProvider struct {
 		hireMap           map[string]Hire
-		equipmentProvider EquipmentProvider
+		equipmentProvider *EquipmentProvider
 	}
 )
 
-func InitHireProvider(equipmentProvider EquipmentProvider) (HireProvider, error) {
+func InitHireProvider(equipmentProvider *EquipmentProvider) (HireProvider, error) {
 	hireMap, err := getHireMap()
 	return HireProvider{hireMap: hireMap, equipmentProvider: equipmentProvider}, err
 }
