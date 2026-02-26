@@ -34,5 +34,29 @@
     "cost": "50s",
     "str": "d8",
     "attack": "Claws d6"
+  },
+  {
+    "type": "Ferret",
+    "cost": "8s",
+    "str": "d6",
+    "attack": "Bite d4"
+  },
+  {
+    "type": "Mutt with telepathic link",
+    "cost": "25s",
+    "str": "d10",
+    "attack": "Bite d6"
+  },
+  {
+    "type": "Talking Parrot",
+    "cost": "25s",
+    "str": "d6",
+    "attack": "Claws d4"
+  },
+  {
+    "type": "Eagle",
+    "cost": "75s",
+    "str": "d10",
+    "attack": "Claws d8"
   }
 ]
