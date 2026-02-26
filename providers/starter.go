@@ -141,7 +141,10 @@ func (sp *StarterProvider) GenerateStarter(hp, maxStat int) (models.Description,
 
 func (sp *StarterProvider) getDescriptionFromContentList(contentSlice []Content) string {
 	var description strings.Builder
-	for _, content := range contentSlice {
+	for i, content := range contentSlice {
+		if i > 0 {
+			description.WriteString("<br>")
+		}
 		description.WriteString(
 			sp.equipmentProvider.GetEquipmentDescription(content.Name, content.ExtraInfo),
 		)

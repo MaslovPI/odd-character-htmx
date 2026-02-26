@@ -65,7 +65,7 @@ func TestGetPetDescription(t *testing.T) {
 				t.Fatalf("unexpected error: %v", err)
 			}
 			var strength int
-			fmt.Sscanf(got, "Cost: 5s\nStrength: %d\nAttack: Bite d6", &strength)
+			fmt.Sscanf(got, "Cost: 5s<br>Strength: %d<br>Attack: Bite d6", &strength)
 			if strength < 1 || strength > 6 {
 				t.Errorf("strength %d out of d6 range [1,6]", strength)
 			}

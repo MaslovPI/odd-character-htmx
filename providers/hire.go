@@ -56,8 +56,8 @@ func (h *HireProvider) GetHireDescription(hireType string) (string, error) {
 	}
 
 	var description strings.Builder
-	fmt.Fprintf(&description, "Cost (per day): %s\n", item.CostPerDay)
-	fmt.Fprintf(&description, "Hit protection: %s\n", item.HitProtection)
+	fmt.Fprintf(&description, "Cost (per day): %s<br>", item.CostPerDay)
+	fmt.Fprintf(&description, "Hit protection: %s<br>", item.HitProtection)
 	availableScore := item.AbilityScores
 	pregenStrength := 0
 	var err error
@@ -71,7 +71,7 @@ func (h *HireProvider) GetHireDescription(hireType string) (string, error) {
 	strength, dexterity, willpower := generateHireAbilityScores(availableScore, pregenStrength)
 
 	fmt.Fprintf(&description,
-		"Strength: %d\nDexterity: %d\nWillpower: %d\n",
+		"Strength: %d<br>Dexterity: %d<br>Willpower: %d<br>",
 		strength,
 		dexterity,
 		willpower,
@@ -80,7 +80,7 @@ func (h *HireProvider) GetHireDescription(hireType string) (string, error) {
 	for _, equipment := range item.Equipment {
 		fmt.Fprintf(
 			&description,
-			"%s\n",
+			"%s<br>",
 			h.equipmentProvider.GetEquipmentDescription(equipment, ""),
 		)
 	}

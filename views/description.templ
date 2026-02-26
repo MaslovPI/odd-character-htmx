@@ -4,15 +4,27 @@ import "github.com/maslovpi/odd-character-htmx/models"
 
 templ Description(starter models.Description) {
 	if len(starter.Content) != 0 {
-		<p>Starting equipment: { starter.Content }</p>
+		<p>
+			<b>Starting equipment: </b>
+			@templ.Raw(starter.Content)
+		</p>
 	}
 	if starter.Arcana.NotEmpty {
-		<p><b>{ starter.Arcana.Name }</b>: { starter.Arcana.Description }</p>
+		<p>
+			<b>{ starter.Arcana.Name }: </b>
+			{ starter.Arcana.Description }
+		</p>
 	}
 	if starter.Pet.NotEmpty {
-		<p><b>{ starter.Pet.Name }</b>: { starter.Pet.Description }</p>
+		<p>
+			<b>{ starter.Pet.Name }: </b>
+			@templ.Raw(starter.Pet.Description)
+		</p>
 	}
 	if starter.Hire.NotEmpty {
-		<p><b>{ starter.Hire.Name }</b>: { starter.Hire.Description }</p>
+		<p>
+			<b>{ starter.Hire.Name }: </b>
+			@templ.Raw(starter.Hire.Description)
+		</p>
 	}
 }
