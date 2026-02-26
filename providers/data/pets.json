@@ -55,7 +55,7 @@
   },
   {
     "type": "Eagle",
-    "cost": "75s",
+    "cost": "1g",
     "str": "d10",
     "attack": "Claws d8"
   }
