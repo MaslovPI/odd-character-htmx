@@ -1,17 +1,56 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"log/slog"
 	"net/http"
+	"net/url"
 	"os"
 	"strconv"
+	"time"
 
 	"github.com/a-h/templ"
 	"github.com/maslovpi/odd-character-htmx/models"
 	"github.com/maslovpi/odd-character-htmx/providers"
 	"github.com/maslovpi/odd-character-htmx/views"
 )
+
+const characterCookieName = "character"
+
+var tenYearsInSeconds = int((10 * 365 * 24 * time.Hour).Seconds())
+
+func saveCharacterToCookie(w http.ResponseWriter, char models.Character) error {
+	data, err := json.Marshal(char)
+	if err != nil {
+		return err
+	}
+	http.SetCookie(w, &http.Cookie{
+		Name:     characterCookieName,
+		Value:    url.QueryEscape(string(data)),
+		Path:     "/",
+		MaxAge:   tenYearsInSeconds,
+		HttpOnly: true,
+		SameSite: http.SameSiteLaxMode,
+	})
+	return nil
+}
+
+func getCharacterFromCookie(r *http.Request) (models.Character, bool) {
+	cookie, err := r.Cookie(characterCookieName)
+	if err != nil {
+		return models.Character{}, false
+	}
+	decoded, err := url.QueryUnescape(cookie.Value)
+	if err != nil {
+		return models.Character{}, false
+	}
+	var char models.Character
+	if err := json.Unmarshal([]byte(decoded), &char); err != nil {
+		return models.Character{}, false
+	}
+	return char, true
+}
 
 func middlewareLog(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
@@ -21,7 +60,11 @@ func middlewareLog(next http.Handler) http.Handler {
 }
 
 func home(w http.ResponseWriter, r *http.Request) error {
-	templ.Handler(views.Index(models.GetEmptyChar())).ServeHTTP(w, r)
+	char, ok := getCharacterFromCookie(r)
+	if !ok {
+		char = models.GetEmptyChar()
+	}
+	templ.Handler(views.Index(char)).ServeHTTP(w, r)
 	return nil
 }
 
@@ -29,6 +72,12 @@ func rollStats(w http.ResponseWriter, r *http.Request) error {
 	stats, err := models.RollStats()
 	if err != nil {
 		return &appError{err, "failed to roll stats", http.StatusInternalServerError}
+	}
+	char, _ := getCharacterFromCookie(r)
+	char.Stats = stats
+	char.Description = models.Description{}
+	if err := saveCharacterToCookie(w, char); err != nil {
+		return &appError{err, "failed to save character cookie", http.StatusInternalServerError}
 	}
 	templ.Handler(views.Stats(stats)).ServeHTTP(w, r)
 	return nil
@@ -39,19 +88,27 @@ func generateDescription(w http.ResponseWriter, r *http.Request) error {
 		return &appError{err, "failed to parse form", http.StatusBadRequest}
 	}
 
-	maxStat, err := strconv.Atoi(r.FormValue("max_stat"))
-	if err != nil {
-		return &appError{err, "invalid max_stat", http.StatusBadRequest}
+	char, ok := getCharacterFromCookie(r)
+	if !ok {
+		maxStat, err := strconv.Atoi(r.FormValue("max_stat"))
+		if err != nil {
+			return &appError{err, "invalid max_stat", http.StatusBadRequest}
+		}
+		hp, err := strconv.Atoi(r.FormValue("hp"))
+		if err != nil {
+			return &appError{err, "invalid hp", http.StatusBadRequest}
+		}
+		char.Stats = models.Stats{Max: maxStat, HitProtection: hp}
 	}
 
-	hp, err := strconv.Atoi(r.FormValue("hp"))
-	if err != nil {
-		return &appError{err, "invalid hp", http.StatusBadRequest}
-	}
-
-	description, err := starterProvider.GenerateStarter(hp, maxStat)
+	description, err := starterProvider.GenerateStarter(char.Stats.HitProtection, char.Stats.Max)
 	if err != nil {
 		return &appError{err, "not able to generate starter", http.StatusInternalServerError}
+	}
+
+	char.Description = description
+	if err := saveCharacterToCookie(w, char); err != nil {
+		return &appError{err, "failed to save character cookie", http.StatusInternalServerError}
 	}
 
 	templ.Handler(views.Description(description)).ServeHTTP(w, r)
