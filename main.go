@@ -134,8 +134,9 @@ func main() {
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))
 
-	slog.Info("server starting", "addr", "http://localhost:42069")
-	if err := http.ListenAndServe(":42069", middlewareLog(mux)); err != nil {
+	port := os.Getenv("PORT")
+	slog.Info("server starting", "addr", "http://localhost:"+port)
+	if err := http.ListenAndServe(":"+port, middlewareLog(mux)); err != nil {
 		slog.Error("server failed", "err", err)
 		os.Exit(1)
 	}
