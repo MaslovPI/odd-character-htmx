@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/a-h/templ"
+	"github.com/joho/godotenv"
 	"github.com/maslovpi/odd-character-htmx/models"
 	"github.com/maslovpi/odd-character-htmx/providers"
 	"github.com/maslovpi/odd-character-htmx/views"
@@ -133,11 +134,27 @@ func main() {
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))
-
-	port := os.Getenv("PORT")
+	port := getPort("8080")
+	if err != nil {
+		log.Fatalf("Error getting PORT from env: %v", err)
+	}
 	slog.Info("server starting", "addr", "http://localhost:"+port)
 	if err := http.ListenAndServe(":"+port, middlewareLog(mux)); err != nil {
 		slog.Error("server failed", "err", err)
 		os.Exit(1)
 	}
+}
+
+func getPort(fallback string) string {
+	err := godotenv.Load()
+	if err != nil {
+		log.Println("Note: No .env file found, using system environment variables.")
+	}
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		return fallback
+	}
+
+	return port
 }
