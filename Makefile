@@ -6,7 +6,7 @@ DOCKER_IMAGE=maslovpi/odd-character-htmx:latest
 ## build-all: Compiles the Go binary for Linux and builds the Docker image
 build-all:
 	@echo "Building Go binary for Linux/AMD64..."
-	GOOS=linux GOARCH=amd64 go build -o $(BINARY_NAME) .
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o $(BINARY_NAME) .
 	
 	@echo "Building Docker image..."
 	docker build -t $(DOCKER_IMAGE) .
