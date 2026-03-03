@@ -103,6 +103,28 @@ func generateDescription(w http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
+func editName(w http.ResponseWriter, r *http.Request) error {
+	char, _ := getCharacterFromCookie(r)
+	templ.Handler(views.CharacterNameEdit(char.Name)).ServeHTTP(w, r)
+	return nil
+}
+
+func setName(w http.ResponseWriter, r *http.Request) error {
+	char, _ := getCharacterFromCookie(r)
+	char.Name = r.FormValue("name")
+	if err := saveCharacterToCookie(w, char); err != nil {
+		return &appError{err, "failed to save character cookie", http.StatusInternalServerError}
+	}
+	templ.Handler(views.CharacterNameDisplay(char.Name)).ServeHTTP(w, r)
+	return nil
+}
+
+func cancelName(w http.ResponseWriter, r *http.Request) error {
+	char, _ := getCharacterFromCookie(r)
+	templ.Handler(views.CharacterNameDisplay(char.Name)).ServeHTTP(w, r)
+	return nil
+}
+
 func reset(w http.ResponseWriter, r *http.Request) error {
 	http.SetCookie(w, &http.Cookie{
 		Name:   characterCookieName,
@@ -130,6 +152,9 @@ func main() {
 	mux.Handle("GET /rollstats", appHandler(rollStats))
 	mux.Handle("POST /generatedescription", appHandler(generateDescription))
 	mux.Handle("POST /reset", appHandler(reset))
+	mux.Handle("GET /editname", appHandler(editName))
+	mux.Handle("POST /setname", appHandler(setName))
+	mux.Handle("GET /cancelname", appHandler(cancelName))
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))

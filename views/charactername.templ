@@ -1,0 +1,41 @@
+package views
+
+templ CharacterNameDisplay(name string) {
+	<div id="character-name" class="character-name-display">
+		if name == "" {
+			<h1>Odd Character</h1>
+		} else {
+			<h1>{ name }</h1>
+		}
+		<button
+			type="button"
+			class="btn-icon"
+			hx-get="/editname"
+			hx-target="#character-name"
+			hx-swap="outerHTML"
+			aria-label="Edit name"
+		>✎</button>
+	</div>
+}
+
+templ CharacterNameEdit(name string) {
+	<div id="character-name" class="character-name-edit">
+		<form hx-post="/setname" hx-target="#character-name" hx-swap="outerHTML">
+			<input
+				class="name-input"
+				type="text"
+				name="name"
+				value={ name }
+				placeholder="Odd Character"
+				autofocus
+			/>
+			<button type="submit">✓</button>
+			<button
+				type="button"
+				hx-get="/cancelname"
+				hx-target="#character-name"
+				hx-swap="outerHTML"
+			>✕</button>
+		</form>
+	</div>
+}

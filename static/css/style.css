@@ -82,6 +82,51 @@ button:hover {
 	border-color: var(--parchment);
 }
 
+.character-name-display {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.character-name-display h1 {
+	margin: 0;
+}
+
+.btn-icon {
+	border: none;
+	background: transparent;
+	color: var(--parchment);
+	font-size: 1.1rem;
+	padding: 0.1rem 0.3rem;
+	opacity: 0.4;
+	cursor: pointer;
+	line-height: 1;
+	margin: 0;
+}
+
+.btn-icon:hover {
+	opacity: 0.9;
+}
+
+.character-name-edit form {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0.5rem 0;
+}
+
+.name-input {
+	font-family: "Cinzel", serif;
+	font-size: 1.5rem;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--parchment);
+	color: var(--parchment);
+	padding: 0.2rem 0.4rem;
+	outline: none;
+	min-width: 12rem;
+}
+
 .red {
 	color: var(--hot-red);
 	text-shadow:

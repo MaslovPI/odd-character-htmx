@@ -1,6 +1,7 @@
 package models
 
 type Character struct {
+	Name        string
 	Description Description
 	Stats       Stats
 }

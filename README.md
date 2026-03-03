@@ -15,9 +15,10 @@ And this project is a continuation
 
 - [x] Character creation flow & lock state
 - [x] Stats UI rework
-- [ ] Current stat value tracking
 - [x] Reset character
-- [ ] Character name
+- [x] Character name
+- [ ] Current stat value tracking
+- [ ] Fix hire display (description renders raw HTML tags)
 - [ ] Attack die roll
 - [ ] Stat check die roll
 - [ ] Adding/removing equipment
@@ -26,3 +27,4 @@ And this project is a continuation
 - [ ] Adding/removing hire
 - [ ] Character portrait
 - [ ] Save/Load character to disk
+- [ ] Money/gold tracking
