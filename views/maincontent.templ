@@ -7,7 +7,7 @@ templ MainContent(character models.Character) {
 		<h1>Odd Character</h1>
 		<form id="char-form">
 			<div id="stats" class="stats">
-				@Stats(character.Stats)
+				@Stats(character.Stats, len(character.Description.Content) > 0)
 			</div>
 			<div id="description" class="description">
 				@Description(character.Description)

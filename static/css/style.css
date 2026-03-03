@@ -1,11 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Roboto+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Pirata+One&display=swap");
 
 :root {
 	--steel-dark: #0e0f11;
 	--parchment: #d7cbb2;
 	--blood-red: #9b1c1c;
 	--hot-red: #c92a2a;
+	--arcana: #9e7ec7;
+	--pet: #c4a84f;
+	--hire: #7aaa9e;
 }
+
+.item-arcana { color: var(--arcana); }
+.item-pet    { color: var(--pet); }
+.item-hire   { color: var(--hire); }
 
 body {
   margin:2em auto;
@@ -18,29 +25,66 @@ body {
   font-size:18px;
 	background: var(--steel-dark);
 	color: var(--parchment);
-	font-family: "Roboto Condensed", sans-serif;
+	font-family: "Cinzel", serif;
 }
 
   h1,h2,h3{line-height:1.2}
 
-.stats {
+h1 {
+	color: var(--parchment);
+	text-shadow: 2px 2px 0 #000;
+}
+
+.stats-table {
 	font-family: "Cinzel", serif;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
+	border-collapse: collapse;
+	margin: 1rem 0;
 }
 
-.stats p {
-	margin: 0.3rem 0;
-	padding-left: 0.5rem;
-	border-left: 2px solid #333;
-	text-shadow: 1px 1px 0 #000;
+.stats-table th {
+	font-family: "Pirata One", serif;
+	font-size: 4.7rem;
+	padding: 0 1.4rem 0.2rem;
+	text-align: center;
+	line-height: 1;
+}
+
+.stat-val {
+	font-family: "Pirata One", serif;
+	font-size: 4.7rem;
+	padding: 0 1.4rem;
+	text-align: center;
+	color: var(--parchment);
+	text-shadow: 2px 2px 0 #000;
+	line-height: 1;
+}
+
+button {
+	font-family: "Cinzel", serif;
+	font-size: 0.85rem;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: var(--parchment);
+	background: transparent;
+	border: 1px solid var(--parchment);
+	padding: 0.5rem 1.4rem;
+	margin: 0.4rem 0.4rem 0 0;
+	cursor: pointer;
+	opacity: 0.8;
+	transition: opacity 0.15s, border-color 0.15s;
+}
+
+button:hover {
+	opacity: 1;
+	border-color: var(--parchment);
 }
 
 .red {
 	color: var(--hot-red);
-	border-left-color: var(--blood-red);
 	text-shadow:
-		0 0 4px rgba(201, 42, 42, 0.6),
+		0 0 6px rgba(201, 42, 42, 0.6),
 		1px 1px 0 #000;
-	font-weight: 700;
 }

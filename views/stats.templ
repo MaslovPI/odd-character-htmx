@@ -5,25 +5,35 @@ import (
 	"github.com/maslovpi/odd-character-htmx/models"
 )
 
-templ Stats(stats models.Stats) {
-	if stats.Strength == stats.Max {
-		<p class="red">STR: { stats.Strength }</p>
-	} else {
-		<p>STR: { stats.Strength }</p>
-	}
-	if stats.Dexterity == stats.Max {
-		<p class="red">DEX: { stats.Dexterity }</p>
-	} else {
-		<p>DEX: { stats.Dexterity }</p>
-	}
-	if stats.Willpower == stats.Max {
-		<p class="red">WIL: { stats.Willpower }</p>
-	} else {
-		<p>WIL: { stats.Willpower }</p>
-	}
-	<br/>
-	<p>HP: { stats.HitProtection }</p>
-	// Input for generating description
-	<input type="hidden" name="max_stat" value={ fmt.Sprintf("%d", stats.Max) }/>
-	<input type="hidden" name="hp" value={ fmt.Sprintf("%d", stats.HitProtection) }/>
+templ Stats(stats models.Stats, locked bool) {
+	<table class="stats-table">
+		<thead>
+			<tr>
+				<th>STR</th>
+				<th>DEX</th>
+				<th>WIL</th>
+				<th>HP</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				if !locked && stats.Strength == stats.Max {
+					<td class="stat-val red">{ fmt.Sprintf("%d", stats.Strength) }</td>
+				} else {
+					<td class="stat-val">{ fmt.Sprintf("%d", stats.Strength) }</td>
+				}
+				if !locked && stats.Dexterity == stats.Max {
+					<td class="stat-val red">{ fmt.Sprintf("%d", stats.Dexterity) }</td>
+				} else {
+					<td class="stat-val">{ fmt.Sprintf("%d", stats.Dexterity) }</td>
+				}
+				if !locked && stats.Willpower == stats.Max {
+					<td class="stat-val red">{ fmt.Sprintf("%d", stats.Willpower) }</td>
+				} else {
+					<td class="stat-val">{ fmt.Sprintf("%d", stats.Willpower) }</td>
+				}
+				<td class="stat-val">{ fmt.Sprintf("%d", stats.HitProtection) }</td>
+			</tr>
+		</tbody>
+	</table>
 }

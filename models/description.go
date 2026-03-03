@@ -22,3 +22,16 @@ const (
 func (ni *NamedItem) IsEmpty() bool {
 	return ni.Name == ""
 }
+
+func (t ItemType) CSSClass() string {
+	switch t {
+	case Arcana:
+		return "item-arcana"
+	case Pet:
+		return "item-pet"
+	case Hire:
+		return "item-hire"
+	default:
+		return ""
+	}
+}
