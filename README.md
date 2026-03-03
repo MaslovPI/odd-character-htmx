@@ -25,3 +25,4 @@ And this project is a continuation
 - [ ] Adding/removing pet
 - [ ] Adding/removing hire
 - [ ] Character portrait
+- [ ] Save/Load character to disk
