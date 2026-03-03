@@ -13,15 +13,21 @@ And this project is a continuation
 
 ## Roadmap
 
+- [ ] Character creation flow & lock state
+  - [ ] Lock stats after generating description
+  - [ ] Only Clear available when locked
+- [ ] Stats UI rework
+  - [ ] Table layout, bigger font
+  - [ ] Rolling: highlight max stat
+  - [ ] Locked: `rolled / [current]` per cell, no highlight
+- [ ] Current stat value tracking
+- [ ] Reset character
+- [ ] Character name
 - [ ] Attack die roll
 - [ ] Stat check die roll
-- [ ] Improve character creation flow
-- [ ] Reset character
-- [ ] Current stat value tracking
 - [ ] Adding/removing equipment
 - [ ] Adding/removing arcanum
 - [ ] Adding/removing pet
 - [ ] Adding/removing hire
-- [ ] Character name
-- [ ] Character portrait
 - [ ] UI glow up
+- [ ] Character portrait
