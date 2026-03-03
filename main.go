@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"net/url"
 	"os"
-	"strconv"
 	"time"
 
 	"github.com/a-h/templ"
@@ -80,26 +79,14 @@ func rollStats(w http.ResponseWriter, r *http.Request) error {
 	if err := saveCharacterToCookie(w, char); err != nil {
 		return &appError{err, "failed to save character cookie", http.StatusInternalServerError}
 	}
-	templ.Handler(views.Stats(stats)).ServeHTTP(w, r)
+	templ.Handler(views.MainContent(char)).ServeHTTP(w, r)
 	return nil
 }
 
 func generateDescription(w http.ResponseWriter, r *http.Request) error {
-	if err := r.ParseForm(); err != nil {
-		return &appError{err, "failed to parse form", http.StatusBadRequest}
-	}
-
 	char, ok := getCharacterFromCookie(r)
-	if !ok {
-		maxStat, err := strconv.Atoi(r.FormValue("max_stat"))
-		if err != nil {
-			return &appError{err, "invalid max_stat", http.StatusBadRequest}
-		}
-		hp, err := strconv.Atoi(r.FormValue("hp"))
-		if err != nil {
-			return &appError{err, "invalid hp", http.StatusBadRequest}
-		}
-		char.Stats = models.Stats{Max: maxStat, HitProtection: hp}
+	if !ok || char.Stats.Strength == 0 {
+		return &appError{nil, "stats not rolled", http.StatusBadRequest}
 	}
 
 	description, err := starterProvider.GenerateStarter(char.Stats.HitProtection, char.Stats.Max)
@@ -112,7 +99,18 @@ func generateDescription(w http.ResponseWriter, r *http.Request) error {
 		return &appError{err, "failed to save character cookie", http.StatusInternalServerError}
 	}
 
-	templ.Handler(views.Description(description)).ServeHTTP(w, r)
+	templ.Handler(views.MainContent(char)).ServeHTTP(w, r)
+	return nil
+}
+
+func reset(w http.ResponseWriter, r *http.Request) error {
+	http.SetCookie(w, &http.Cookie{
+		Name:   characterCookieName,
+		Value:  "",
+		Path:   "/",
+		MaxAge: -1,
+	})
+	templ.Handler(views.MainContent(models.GetEmptyChar())).ServeHTTP(w, r)
 	return nil
 }
 
@@ -131,6 +129,7 @@ func main() {
 	mux.Handle("GET /{$}", appHandler(home))
 	mux.Handle("GET /rollstats", appHandler(rollStats))
 	mux.Handle("POST /generatedescription", appHandler(generateDescription))
+	mux.Handle("POST /reset", appHandler(reset))
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))

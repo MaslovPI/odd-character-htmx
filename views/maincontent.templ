@@ -3,32 +3,51 @@ package views
 import "github.com/maslovpi/odd-character-htmx/models"
 
 templ MainContent(character models.Character) {
-	<div class="container">
+	<div id="main-content" class="container">
 		<h1>Odd Character</h1>
 		<form id="char-form">
 			<div id="stats" class="stats">
 				@Stats(character.Stats)
 			</div>
-			<button
-				type="button"
-				hx-get="/rollstats"
-				hx-target="#stats"
-				hx-swap="innerHTML"
-			>
-				Roll Stats
-			</button>
 			<div id="description" class="description">
 				@Description(character.Description)
 			</div>
-			<button
-				type="button"
-				hx-post="/generatedescription"
-				hx-target="#description"
-				hx-swap="innerHTML"
-				hx-include="closest form"
-			>
-				Generate Description
-			</button>
+			if len(character.Description.Content) > 0 {
+				<button
+					type="button"
+					hx-post="/reset"
+					hx-target="#main-content"
+					hx-swap="outerHTML"
+				>
+					Clear Character
+				</button>
+			} else if character.Stats.Strength != 0 {
+				<button
+					type="button"
+					hx-get="/rollstats"
+					hx-target="#main-content"
+					hx-swap="outerHTML"
+				>
+					Re-roll
+				</button>
+				<button
+					type="button"
+					hx-post="/generatedescription"
+					hx-target="#main-content"
+					hx-swap="outerHTML"
+				>
+					Submit
+				</button>
+			} else {
+				<button
+					type="button"
+					hx-get="/rollstats"
+					hx-target="#main-content"
+					hx-swap="outerHTML"
+				>
+					Roll
+				</button>
+			}
 		</form>
 	</div>
 }
