@@ -3,9 +3,8 @@ package providers
 import (
 	_ "embed"
 	"encoding/json"
-	"math/rand"
-	"time"
 
+	"github.com/maslovpi/odd-character-htmx/functions"
 	"github.com/maslovpi/odd-character-htmx/models"
 )
 
@@ -42,6 +41,5 @@ func (a *Arcana) ToNamedItem() models.NamedItem {
 }
 
 func getRandomIndex(length int) int {
-	rand.New(rand.NewSource(time.Now().Unix()))
-	return rand.Intn(length)
+	return functions.GetRandomInt(length)
 }

@@ -4,9 +4,7 @@ import (
 	_ "embed"
 	"encoding/json"
 	"fmt"
-	"math/rand"
 	"strings"
-	"time"
 
 	"github.com/maslovpi/odd-character-htmx/functions"
 )
@@ -107,6 +105,5 @@ func generateScore(availableScore int) int {
 	if availableScore < 2 {
 		return 1
 	}
-	rand.New(rand.NewSource(time.Now().Unix()))
-	return rand.Intn(availableScore) + 1
+	return functions.GetRandomInt(availableScore) + 1
 }

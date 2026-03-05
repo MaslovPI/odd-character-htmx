@@ -8,13 +8,18 @@ import (
 	"time"
 )
 
+var rng = rand.New(rand.NewSource(time.Now().UnixNano()))
+
+func GetRandomInt(n int) int {
+	return rng.Intn(n)
+}
+
 func Roll(dimensions int) (int, error) {
 	if dimensions < 1 {
 		return 0, errors.New("Wrong dimensions")
 	}
 
-	rand.New(rand.NewSource(time.Now().Unix()))
-	return rand.Intn(dimensions) + 1, nil
+	return GetRandomInt(dimensions) + 1, nil
 }
 
 func RollMultipleDice(amount int, dimensions int) (int, error) {
