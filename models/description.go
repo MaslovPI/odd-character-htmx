@@ -5,6 +5,7 @@ type (
 	NamedItem struct {
 		Name        string
 		Description string
+		Attack      string
 		Type        ItemType
 	}
 	Description struct {
