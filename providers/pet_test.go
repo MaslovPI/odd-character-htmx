@@ -19,10 +19,11 @@ func TestInitPetProvider(t *testing.T) {
 func TestGetPetDescription(t *testing.T) {
 	mockMap := map[string]Pet{
 		"Mutt": {
-			Type:     "Mutt",
-			Cost:     "5s",
-			Strength: "d6",
-			Attack:   "Bite d6",
+			Type:       "Mutt",
+			Cost:       "5s",
+			Strength:   "d6",
+			AttackType: "Bite",
+			Attack:     "d6",
 		},
 	}
 
@@ -75,10 +76,11 @@ func TestGetPetDescription(t *testing.T) {
 	t.Run("should return error for invalid dice format", func(t *testing.T) {
 		badMap := map[string]Pet{
 			"Ghost": {
-				Type:     "Ghost",
-				Cost:     "0",
-				Strength: "invalid",
-				Attack:   "Spook",
+				Type:       "Ghost",
+				Cost:       "0",
+				Strength:   "invalid",
+				AttackType: "Spook",
+				Attack:     "d1",
 			},
 		}
 		pp := getPetProviderWithMap(badMap)

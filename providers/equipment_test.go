@@ -118,7 +118,7 @@ func TestGetEquipmentDescription(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			ep := getEquipmentProviderWithMap(mockMap)
-			got := ep.GetEquipmentDescription(tt.inputName, tt.givenDescription)
+			got := ep.GetEquipmentItem(tt.inputName, tt.givenDescription)
 			if !reflect.DeepEqual(got, tt.want) {
 				t.Errorf("GetEquipmentDescription(%v, %v) = %v; want %v",
 					tt.inputName, tt.givenDescription, got, tt.want)

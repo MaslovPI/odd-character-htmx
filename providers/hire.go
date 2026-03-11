@@ -76,7 +76,7 @@ func (h *HireProvider) GetHireDescription(hireType string) (string, error) {
 	)
 
 	for _, equipment := range item.Equipment {
-		equipmentItem := h.equipmentProvider.GetEquipmentDescription(equipment, "")
+		equipmentItem := h.equipmentProvider.GetEquipmentItem(equipment, "")
 		fmt.Fprintf(
 			&description,
 			"%s (%s) <br>",

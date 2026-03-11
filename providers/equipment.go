@@ -18,6 +18,7 @@ type (
 		Name        string   `json:"name"`
 		Cost        string   `json:"cost"`
 		Description string   `json:"description"`
+		Attack      string   `json:"attack"`
 		Examples    []string `json:"examples"`
 	}
 	EquipmentProvider struct {
@@ -45,7 +46,7 @@ func getEquipmentMap() (map[string]Equipment, error) {
 	return equipmentMap, nil
 }
 
-func (e *EquipmentProvider) GetEquipmentDescription(
+func (e *EquipmentProvider) GetEquipmentItem(
 	name, givenDescription string,
 ) models.NamedItem {
 	equipment, exists := e.getByName(name)
@@ -58,6 +59,7 @@ func (e *EquipmentProvider) GetEquipmentDescription(
 			Name:        name,
 			Description: equipment.constructDescription(),
 			Type:        models.Equipment,
+			Attack:      equipment.Attack,
 		}
 	}
 

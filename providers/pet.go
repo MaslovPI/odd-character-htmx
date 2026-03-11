@@ -13,10 +13,11 @@ var petJSON []byte
 
 type (
 	Pet struct {
-		Type     string `json:"type"`
-		Cost     string `json:"cost"`
-		Strength string `json:"str"`
-		Attack   string `json:"attack"`
+		Type       string `json:"type"`
+		Cost       string `json:"cost"`
+		Strength   string `json:"str"`
+		AttackType string `json:"attack_type"`
+		Attack     string `json:"attack"`
 	}
 	PetProvider struct {
 		petMap map[string]Pet
@@ -53,9 +54,10 @@ func (p *PetProvider) GetPetDescription(petToFind string) (string, error) {
 		return "", err
 	}
 	description := fmt.Sprintf(
-		"Cost: %s, Strength: %d, Attack: %s",
+		"Cost: %s, Strength: %d, Attack: %s %s",
 		item.Cost,
 		rolledStrength,
+		item.AttackType,
 		item.Attack,
 	)
 	return description, nil

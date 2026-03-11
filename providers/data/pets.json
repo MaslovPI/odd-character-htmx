@@ -3,60 +3,70 @@
     "type": "Mutt",
     "cost": "5s",
     "str": "d10",
-    "attack": "Bite d6"
+    "attack_type": "Bite",
+    "attack": "d6"
   },
   {
     "type": "Hound",
     "cost": "50s",
     "str": "2d6",
-    "attack": "Bite d6"
+    "attack_type": "Bite",
+    "attack": "d6"
   },
   {
     "type": "Parrot",
     "cost": "10s",
     "str": "d6",
-    "attack": "Claws d4"
+    "attack_type": "Claws",
+    "attack": "d4"
   },
   {
     "type": "Raven",
     "cost": "10s",
     "str": "d6",
-    "attack": "Claws d4"
+    "attack_type": "Claws",
+    "attack": "d4"
   },
   {
     "type": "Kestrel",
     "cost": "50s",
     "str": "d8",
-    "attack": "Claws d6"
+    "attack_type": "Claws",
+    "attack": "d6"
   },
   {
     "type": "Hawk",
     "cost": "50s",
     "str": "d8",
-    "attack": "Claws d6"
+    "attack_type": "Claws",
+    "attack": "d6"
   },
   {
     "type": "Ferret",
     "cost": "8s",
     "str": "d6",
-    "attack": "Bite d4"
+    "attack_type": "Bite",
+    "attack": "d4"
   },
   {
     "type": "Mutt with telepathic link",
     "cost": "25s",
     "str": "d10",
-    "attack": "Bite d6"
+    "attack_type": "Bite",
+    "attack": "d6"
   },
   {
     "type": "Talking Parrot",
     "cost": "25s",
     "str": "d6",
-    "attack": "Claws d4"
+    "attack_type": "Claws",
+    "attack": "d4"
   },
   {
     "type": "Eagle",
     "cost": "1g",
     "str": "d10",
-    "attack": "Claws d8"
+    "attack_type": "Claws",
+    "attack": "d8"
   }
 ]

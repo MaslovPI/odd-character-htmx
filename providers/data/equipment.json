@@ -3,18 +3,21 @@
     "name": "Crude Weapon",
     "cost": "1s",
     "description": "d6 Damage, Bulky.",
+    "attack": "d6",
     "examples": ["Bow", "Pitchfork", "Barstool"]
   },
   {
     "name": "Hand Weapon",
     "cost": "2s",
     "description": "d6 Damage.",
+    "attack": "d6",
     "examples": ["Dagger", "Sword", "Pistol", "Club"]
   },
   {
     "name": "Field Weapon",
     "cost": "10s",
     "description": "d8 Damage, Bulky.",
+    "attack": "d8",
     "examples": [
       "Musket",
       "Brace of Pistols",
@@ -27,12 +30,14 @@
     "name": "Noble Weapon",
     "cost": "30s",
     "description": "d8 Damage.",
+    "attack": "d8",
     "examples": ["Finely Made Saber", "Duelling Pistol", "Rapier"]
   },
   {
     "name": "Heavy Gun",
     "cost": "1g",
     "description": "d10 Damage, Bulky. Cannot move and fire.",
+    "attack": "d10",
     "examples": ["Elephant Gun", "Long Rifle"]
   },
   {
@@ -65,12 +70,14 @@
   {
     "name": "Bomb",
     "cost": "20s",
+    "attack": "d10",
     "description": "d10 Blast."
   },
   {
     "name": "Rocket",
     "cost": "20s",
-    "description": "d10 Damage and a colourful explosion."
+    "description": "d10 Damage and a colourful explosion.",
+    "attack": "d10"
   },
   {
     "name": "Smoke Bomb",
@@ -90,7 +97,8 @@
   {
     "name": "Acid",
     "cost": "10s",
-    "description": "d6 Damage. Burns through most materials."
+    "description": "d6 Damage. Burns through most materials.",
+    "attack": "d6"
   },
   {
     "name": "Antitoxin",

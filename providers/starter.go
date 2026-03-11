@@ -131,7 +131,7 @@ func (sp *StarterProvider) GenerateStarter(hp, maxStat int) (models.Description,
 func (sp *StarterProvider) getItemsFromContentList(contentSlice []Content) []models.NamedItem {
 	namedItems := make([]models.NamedItem, len(contentSlice))
 	for i, content := range contentSlice {
-		namedItems[i] = sp.equipmentProvider.GetEquipmentDescription(
+		namedItems[i] = sp.equipmentProvider.GetEquipmentItem(
 			content.Name,
 			content.ExtraInfo,
 		)
