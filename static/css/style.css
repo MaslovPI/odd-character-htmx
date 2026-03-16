@@ -133,3 +133,26 @@ button:hover {
 		0 0 6px rgba(201, 42, 42, 0.6),
 		1px 1px 0 #000;
 }
+
+#main-content {
+	display: flex;
+	gap: 2rem;
+	align-items: flex-start;
+}
+
+.main-panel {
+	flex: 1;
+}
+
+.dice-box {
+	border: 1px solid var(--parchment);
+	padding: 0.8rem;
+	font-family: "Pirata One", serif;
+	font-size: 4.7rem;
+}
+
+.dice-box h3 {
+	margin-top: 0;
+	font-family: "Pirata One", serif;
+	letter-spacing: 0.1em;
+}
