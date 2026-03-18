@@ -19,6 +19,9 @@ templ Description(starter models.Description) {
 								type="button"
 								class="btn-icon"
 								aria-label="Attack"
+								hx-get="/rollattack"
+								hx-target="#dice-result"
+								hx-swap="outerHTML"
 							>🔪</button>
 						}
 					</li>

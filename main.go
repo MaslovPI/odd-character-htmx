@@ -125,6 +125,11 @@ func cancelName(w http.ResponseWriter, r *http.Request) error {
 	return nil
 }
 
+func rollAttack(w http.ResponseWriter, r *http.Request) error {
+	templ.Handler(views.DiceResult(100)).ServeHTTP(w, r)
+	return nil
+}
+
 func reset(w http.ResponseWriter, r *http.Request) error {
 	http.SetCookie(w, &http.Cookie{
 		Name:   characterCookieName,
@@ -155,6 +160,7 @@ func main() {
 	mux.Handle("GET /editname", appHandler(editName))
 	mux.Handle("POST /setname", appHandler(setName))
 	mux.Handle("GET /cancelname", appHandler(cancelName))
+	mux.Handle("GET /rollattack", appHandler(rollAttack))
 
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("GET /static/", http.StripPrefix("/static", fileServer))

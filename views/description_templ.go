@@ -110,7 +110,7 @@ func Description(starter models.Description) templ.Component {
 					}
 				}
 				if item.Attack != "" {
-					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "<button type=\"button\" class=\"btn-icon\" aria-label=\"Attack\">🔪</button>")
+					templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 9, "<button type=\"button\" class=\"btn-icon\" aria-label=\"Attack\" hx-get=\"/rollattack\" hx-target=\"#dice-result\" hx-swap=\"outerHTML\">🔪</button>")
 					if templ_7745c5c3_Err != nil {
 						return templ_7745c5c3_Err
 					}
