@@ -11,6 +11,7 @@ import (
 
 	"github.com/a-h/templ"
 	"github.com/joho/godotenv"
+	"github.com/maslovpi/odd-character-htmx/functions"
 	"github.com/maslovpi/odd-character-htmx/models"
 	"github.com/maslovpi/odd-character-htmx/providers"
 	"github.com/maslovpi/odd-character-htmx/views"
@@ -126,7 +127,11 @@ func cancelName(w http.ResponseWriter, r *http.Request) error {
 }
 
 func rollAttack(w http.ResponseWriter, r *http.Request) error {
-	templ.Handler(views.DiceResult(100)).ServeHTTP(w, r)
+	result, err := functions.RollDice("2d6")
+	if err != nil {
+		return &appError{err, "failed to roll attack", http.StatusInternalServerError}
+	}
+	templ.Handler(views.DiceResult(result)).ServeHTTP(w, r)
 	return nil
 }
 
