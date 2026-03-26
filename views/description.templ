@@ -1,6 +1,7 @@
 package views
 
 import "github.com/maslovpi/odd-character-htmx/models"
+import "fmt"
 
 templ Description(starter models.Description) {
 	if len(starter.Content) != 0 {
@@ -20,6 +21,7 @@ templ Description(starter models.Description) {
 								class="btn-icon"
 								aria-label="Attack"
 								hx-get="/rollattack"
+								hx-vals={ fmt.Sprintf(`{"attack": "%s"}`, item.Attack) }
 								hx-target="#dice-result"
 								hx-swap="outerHTML"
 							>🔪</button>

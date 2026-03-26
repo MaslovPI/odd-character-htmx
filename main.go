@@ -127,7 +127,13 @@ func cancelName(w http.ResponseWriter, r *http.Request) error {
 }
 
 func rollAttack(w http.ResponseWriter, r *http.Request) error {
-	result, err := functions.RollDice("2d6")
+	attack := r.URL.Query().Get("attack")
+
+	if attack == "" {
+		return &appError{nil, "missing attack parameter", http.StatusBadRequest}
+	}
+
+	result, err := functions.RollDice(attack)
 	if err != nil {
 		return &appError{err, "failed to roll attack", http.StatusInternalServerError}
 	}
